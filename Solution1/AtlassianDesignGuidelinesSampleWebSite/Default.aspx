@@ -132,7 +132,7 @@
     <div class="aui-avatar-inner">
          <img src="static/img/avatar-24.png"></img>
     </div>
-</div>
+</div>dd
 
 <div class="aui-avatar aui-avatar-medium">
     <div class="aui-avatar-inner">
