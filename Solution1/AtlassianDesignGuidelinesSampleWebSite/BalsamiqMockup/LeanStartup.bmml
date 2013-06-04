@@ -1,0 +1,200 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1244" measuredH="790" mockupW="1244" mockupH="781">
+  <controls>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::StickyNote" x="1012" y="224" w="162" h="166" measuredW="109" measuredH="123" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>European%20Project%20Managers%0A%20%0A%20%0AOrganisations%20receiving%20Horizon2020%20funding</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::StickyNote" x="850" y="375" w="109" h="103" measuredW="109" measuredH="123" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>65535</color>
+        <text>HorizonTap%20website</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::StickyNote" x="766" y="125" w="171" h="158" measuredW="109" measuredH="123" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16711935</color>
+        <text>Online%0A%20%0ADirect%20communication%20with%20website%20technical%20and%20support%20administrators</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::StickyNote" x="504" y="96" w="231" h="482" measuredW="109" measuredH="123" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>For%20European%20Project%20Managers%3A%20%0A-%20reduced%20job%20seeking%20time%20%0A%20%0AFor%20Organisations%20funded%20by%20Horizon2020%3A%20%0A-%20better%20suited/skilled%20candidates%0A-%20more%20efficient%20financial%20management%20%3D%3D%3E%20better%20budget%20allocation%0A%20%0AFor%20EC%3A%0A-%20more%20efficient%20financial%20management%20of%20Horizon2020%20budget%0A-%20more%20efficient%20project%20management%0A%20%0AFor%20EU%3A%0A-%20maximising%20use%20of%20Horizon2020%20to%20reach%20Lisbon%20strategy%20goals%0A-%20increased%20labour%20force%20mobility%0A-%20better%20allocation%20of%20skilled%20workforce</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::StickyNote" x="681" y="651" w="293" h="123" measuredW="109" measuredH="123" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16750848</color>
+        <text>From%20Horizon%202020%0A%20%0AAfter%203rd%20year%3A%20participation%20fee%20of%20employing%20organisations%20receiving%20funding%20from%20Horizon%202020</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::StickyNote" x="8" y="618" w="539" h="121" measuredW="109" measuredH="123" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <size>10</size>
+        <text>%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20SCENARIO%20A%20%20%20%20%20%20%20%20%20%20%20%20SCENARIO%20B%20%20%20%20%20%20%20%20%20%20%20%20SCENARIO%20C%0AWEB%20DESIGN%20%28in%20%u20AC%29%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%202000%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%206000%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2010000%0AMAINTENANCE%20%28in%20Full-Time%20Equivalents%29%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.25%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.5%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.75%0AADVERTISING%28first%202%20years%29%20%28in%20Full-Time%20Equivalents%29%200.25%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.25%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.25%20%0ATOTAL%20COST%20FOR%20HORIZON2020%20DURATION%28in%20%u20AC%29%20%20%20%2084%2C000%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20166%2C250%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20236%2C250</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::StickyNote" x="257" y="100" w="232" h="222" measuredW="109" measuredH="123" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>3480693</color>
+        <size>9</size>
+        <text>SCENARIO%20A%0Aresearch%20project%20managers%3A%20search%20for%20jobs%20%0Aorganisations%20aiming%20to%20hire%20a%20new%20project%20manager%3A%20publish%20jobs.%20%0ASCENARIO%20B%20%28in%20addition%20to%20SCENARIO%20A%29%3A%20Towards%20personalisation%0Aresearch%20project%20managers%3A%20Create%20a%20personal%20profile%2C%20apply%20online%0Aorganisations%20seeking%20to%20hire%20new%20personnel%3A%20Receive%20applications%2C%20reate%20an%20organisational%20profile%2C%20Search%20through%20the%20pool%20of%20candidate%20profiles%20for%20specific%20skills%0ASCENARIO%20C%20%28in%20addition%20to%20SCENARIOS%20A%20and%20B%29%0ACommunity%20Incubator</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::StickyNote" x="273" y="366" w="200" h="186" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>3355443</color>
+        <text>Website%0A%20%0AFTEs%20for%3A%0A-%20Technical/Support%20Administrator%0A-%20Advertising</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::StickyNote" x="18" y="110" w="191" h="256" measuredW="109" measuredH="123" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>EC%20leadership%20support%0A%20%0AReceivers%20of%20EU%20funding%3A%0A-%20Funding%20bodies%0A-%20Research%20Organisations%0A-%20Other%20Public%20or%20Private%20bodies%0A%20%0AProject%20Manager%20Community%0A%20%0AScientists</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="__group__" x="0" y="9" w="1244" h="781" measuredW="1244" measuredH="781" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Business%20Model%20Canvas</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="579" w="624" h="200" measuredW="624" measuredH="200" zOrder="0" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="624" h="200" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="0"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="4" w="90" h="-1" measuredW="88" measuredH="21" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Cost%20Structure</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="620" y="579" w="624" h="202" measuredW="624" measuredH="202" zOrder="1" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="624" h="202" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="1"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="5" w="113" h="-1" measuredW="105" measuredH="21" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Revenue%20Streams</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="__group__" x="0" y="59" w="252" h="526" measuredW="252" measuredH="526" zOrder="2" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="252" h="526" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="2"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="3" w="-1" h="-1" measuredW="196" measuredH="21" zOrder="1" locked="false" isInGroup="2">
+              <controlProperties>
+                <text>Key%20Partners%20%20%uC774%uC81C%20%uD55C%uAE00%uC774%20%uB418%uB124%uC6A4</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="36" y="108" w="-1" h="-1" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="2"/>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="3" controlTypeID="__group__" x="248" y="59" w="252" h="260" measuredW="252" measuredH="260" zOrder="3" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="252" h="260" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="3"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="4" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="1" locked="false" isInGroup="3">
+              <controlProperties>
+                <text>Key%20Activities</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="4" controlTypeID="__group__" x="492" y="59" w="252" h="526" measuredW="252" measuredH="526" zOrder="4" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="252" h="526" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="4"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="3" w="-1" h="-1" measuredW="108" measuredH="21" zOrder="1" locked="false" isInGroup="4">
+              <controlProperties>
+                <text>Value%20Propositions</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="5" controlTypeID="__group__" x="248" y="313" w="252" h="272" measuredW="252" measuredH="272" zOrder="5" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="252" h="272" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="5"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="4" w="-1" h="-1" measuredW="90" measuredH="21" zOrder="1" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Key%20Resources</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="6" controlTypeID="__group__" x="744" y="59" w="252" h="260" measuredW="252" measuredH="260" zOrder="6" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="252" h="260" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="6"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="4" w="-1" h="-1" measuredW="141" measuredH="21" zOrder="1" locked="false" isInGroup="6">
+              <controlProperties>
+                <text>Customer%20Relationships</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="7" controlTypeID="__group__" x="744" y="313" w="252" h="272" measuredW="252" measuredH="272" zOrder="7" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="252" h="272" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="7"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="4" w="-1" h="-1" measuredW="55" measuredH="21" zOrder="1" locked="false" isInGroup="7">
+              <controlProperties>
+                <text>Channels</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="8" controlTypeID="__group__" x="992" y="59" w="252" h="526" measuredW="252" measuredH="526" zOrder="8" locked="false" isInGroup="36">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="252" h="526" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="8"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="4" w="-1" h="-1" measuredW="124" measuredH="21" zOrder="1" locked="false" isInGroup="8">
+              <controlProperties>
+                <text>Customer%20Segments</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="1" y="10" w="-1" h="-1" measuredW="290" measuredH="26" zOrder="9" locked="false" isInGroup="36">
+          <controlProperties>
+            <bold>true</bold>
+            <size>18</size>
+            <text>The%20Business%20Model%20Canvas%20a%uD55C%uAE00</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Canvas" x="265" y="1" w="483" h="47" measuredW="100" measuredH="70" zOrder="10" locked="false" isInGroup="36">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <color>15658734</color>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="269" y="5" w="-1" h="-1" measuredW="79" measuredH="21" zOrder="11" locked="false" isInGroup="36">
+          <controlProperties>
+            <color>6710886</color>
+            <text>Designed%20for%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::Canvas" x="766" y="0" w="267" h="47" measuredW="100" measuredH="70" zOrder="12" locked="false" isInGroup="36">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <color>15658734</color>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="770" y="4" w="-1" h="-1" measuredW="77" measuredH="21" zOrder="13" locked="false" isInGroup="36">
+          <controlProperties>
+            <color>6710886</color>
+            <text>Designed%20by%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Canvas" x="1050" y="0" w="188" h="47" measuredW="100" measuredH="70" zOrder="14" locked="false" isInGroup="36">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <color>15658734</color>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="1054" y="2" w="-1" h="-1" measuredW="20" measuredH="21" zOrder="15" locked="false" isInGroup="36">
+          <controlProperties>
+            <color>6710886</color>
+            <text>On%3A</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
