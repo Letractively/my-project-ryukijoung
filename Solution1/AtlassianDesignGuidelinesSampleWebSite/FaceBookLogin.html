@@ -1,0 +1,70 @@
+﻿
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+    <script src="http://connect.facebook.net/en_US/all.js" language="JavaScript" type="text/javascript"></script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: "231687866982006",
+                status: true,
+                cookie: true,
+                xfbml: true
+                // oauth:true
+            });
+        };
+        (function (d) {
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+
+        function facebooklogin() {
+            FB.login(function (response) {
+                if (response.authResponse) {
+                    var fbname;
+                    var accessToken = response.authResponse.accessToken;
+                    var user_id;
+                    FB.api('/me', function (user) {
+                        fbname = user.name;
+                        user_id = user.id;
+                        $('#id').val(user.id);
+                        alert(user_id + " : " + fbname + " : " + accessToken + " : " + user.email + " : " + user.gender + " : " + user.birthday);
+                    });
+                } else if (response.status == 'not_authorized') {
+                    alert("로그인 했지만 앱허가는 안됬= " + response.status);
+                } else {
+                    alert(response + " : " + response.status);
+                    alert('로그인에 실패했습니다!!!');
+                }
+            }, { scope: "user_about_me,publish_stream,read_friendlists,offline_access,email,user_birthday" });
+        }
+
+        function facebooklogout() {
+            FB.logout(handleSessionResponse);
+        }
+
+		</script>
+
+</head>
+<body>
+    <form method="post" action="FaceBookLoginTest.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzNDM3NzkxOWRk2cjm0JA9N3YMFSJ1+99H/6i2/WpU9X/09pTsZ5IrTow=" />
+</div>
+
+        <div>
+            <h2>페이스북 API 테스트 페이지</h2>
+             <a href="#none" onclick="facebooklogin();">로그인</a><br/>
+             <a href="#none" onclick="facebooklogout();">로그아웃</a><br/> 
+
+        </div>
+    </form>
+</body>
+</html>
