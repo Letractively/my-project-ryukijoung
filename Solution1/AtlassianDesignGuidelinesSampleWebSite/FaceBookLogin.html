@@ -1,6 +1,4 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
@@ -37,6 +35,7 @@
                         $('#id').val(user.id);
                         alert(user_id + " : " + fbname + " : " + accessToken + " : " + user.email + " : " + user.gender + " : " + user.birthday);
                     });
+                    alert("로그인성공");
                 } else if (response.status == 'not_authorized') {
                     alert("로그인 했지만 앱허가는 안됬= " + response.status);
                 } else {
@@ -47,7 +46,11 @@
         }
 
         function facebooklogout() {
-            FB.logout(handleSessionResponse);
+            //FB.logout(handleSessionResponse);
+            //alert("로그아웃성공");
+            FB.logout(function (response) {
+                // user is now logged out
+            });
         }
 
 		</script>
@@ -55,15 +58,18 @@
 </head>
 <body>
     <form method="post" action="FaceBookLoginTest.aspx" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzNDM3NzkxOWRk2cjm0JA9N3YMFSJ1+99H/6i2/WpU9X/09pTsZ5IrTow=" />
-</div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzNDM3NzkxOWRk2cjm0JA9N3YMFSJ1+99H/6i2/WpU9X/09pTsZ5IrTow=" />
+        /div>
 
         <div>
             <h2>페이스북 API 테스트 페이지</h2>
              <a href="#none" onclick="facebooklogin();">로그인</a><br/>
              <a href="#none" onclick="facebooklogout();">로그아웃</a><br/> 
-
+       <!-- 로그인한 프로필 사진-->
+        <fb:profile-pic uid="loggedinuser" size="square" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=xxxxxxxxxx&locale=en_US&sdk=joey&size=square&uid=loggedinuser"><span style="vertical-align: top; width: 0px; height: 0px;"><iframe name="f91a7fde4" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:profile_pic Facebook Social Plugin" src="http://www.facebook.com/plugins/profile_pic.php?app_id=xxxxxxxxxx&channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D27%23cb%3Df39bf08fac%26domain%3Dkaylis.tistory.com%26origin%3Dhttp%253A%252F%252Fkaylis.tistory.com%252Ff1a92467f%26relation%3Dparent.parent&locale=en_US&sdk=joey&size=square&uid=loggedinuser" style="border: none; visibility: visible;"></iframe></span></fb:profile-pic>
+        <!-- 로그인한 이름 -->
+        <fb:name uid="loggedinuser" use-you="no" fb-xfbml-state="parsed"></fb:name>
         </div>
     </form>
 </body>
