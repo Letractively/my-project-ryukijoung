@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <textarea class="ckeditor" name="editor1"></textarea>
+        <textarea class="ckeditor" name="editor1">하이</textarea>
     </div>
     </form>
 </body>
