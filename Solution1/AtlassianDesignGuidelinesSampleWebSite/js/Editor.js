@@ -1,0 +1,3 @@
+﻿function writeOutput(control) {
+    control
+}
