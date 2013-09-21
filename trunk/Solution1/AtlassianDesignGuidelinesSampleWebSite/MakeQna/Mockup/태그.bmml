@@ -1,0 +1,94 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1725" measuredH="582" mockupW="1623" mockupH="576">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="104" y="42" w="-1" h="-1" measuredW="40" measuredH="27" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>C%23</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::TextArea" x="104" y="93" w="453" h="38" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>C%23%20%uC740%20%uBE14%uB77C%uBE14%uB77C</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::TitleWindow" x="104" y="146" w="446" h="289" measuredW="450" measuredH="400" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uC5D0%uB514%uD130</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="550" y="324" w="-1" h="-1" measuredW="156" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>kjryu@inbrein.%2C%202013-10-10</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::HRule" x="102" y="75" w="719" h="-1" measuredW="100" measuredH="10" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::HRule" x="104" y="136" w="719" h="-1" measuredW="100" measuredH="10" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::HRule" x="104" y="447" w="719" h="-1" measuredW="100" measuredH="10" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::TextArea" x="104" y="173" w="446" h="225" measuredW="200" measuredH="140" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>---%20%uC124%uBA85%0A%20%0A%20%0A%20%0A%20%0A%20%0A--%20%uC720%uC6A9%uD55C%20%uC2F8%uC774%uD2B8%0A%20%0A%20*%20www.naver.com%20%20%20%20%20%20%20%20%20kjryu@inbrein.com%202013-10-10%0A%20%0A--%20%uAD00%uB828%20%uC11C%uC801%0A%20%0A*%20%uB1CC%uB97C%20%uD30C%uBA39%uB294%20C%23%20%20%20%20%20%20%20%20kjryu@inbrein.com%202013-10-10%0A*%20%uB1CC%uB97C%20%uB4E4%20%uD30C%uBA39%uB294%20C%23%20%20%20%20kjryu@inbrein.com%202013-10-10%0A%20%0A%20%0A--%20%uC9C8%uBB38%20%uBAA9%uB85D%0A%20%0A*%20C%23%20%uC5B4%uB5BB%uAC8C%20%uD574%uC694%3F%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::TextInput" x="104" y="555" w="453" h="-1" measuredW="182" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uC544%20%uC774%uD0DC%uADF8%uAC00%20%uB4F1%uB85D%uC774%20%uB418%uC5C8%uAD70%uC694</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="104" y="538" w="719" h="-1" measuredW="100" measuredH="10" zOrder="9" locked="false" isInGroup="-1"/>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Label" x="566" y="558" w="-1" h="-1" measuredW="156" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>kjryu@inbrein.%2C%202013-10-10</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Title" x="193" y="6" w="-1" h="-1" measuredW="252" measuredH="43" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uD14C%uD06C%uB2C8%uCEEC%20%uD0DC%uD06C</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::PointyButton" x="550" y="408" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uC218%uC815</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::TextArea" x="104" y="457" w="446" h="73" measuredW="200" measuredH="140" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uC9C8%uBB38%20%uBAA9%uB85D</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::Label" x="1006" y="29" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uAD00%uB9AC%uB3C4%uAD6C</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::PointyButton" x="606" y="408" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uAD00%uB9AC</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::List" x="1006" y="69" w="149" h="126" measuredW="100" measuredH="126" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1%20%7E%7E%7E%7E%7E%7E%7E%7E%0A2%20%7E%7E%7E%7E%7E%7E%7E%7E%0A3%20%7E%7E%7E%7E%7E%7E%7E%7E%7E%0A4%20%7E%7E%7E%7E%7E%7E%7E%7E%7E%0A5%20%7E%7E%7E%7E%7E%7E%7E%7E%7E</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::Label" x="565" y="360" w="-1" h="-1" measuredW="398" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uC218%uC815%uC744%20%uC548%uD558%uACE0%20%uC800%uC7A5%uD558%uB294%20%uAC83%uC744%20%uB9C9%uB294%20%uB85C%uC9C1%2C%20%uD558%uB8E8%uC5D0%203%uBC88%uB9CC%20%uC218%uC815%20%uAC00%uB2A5%uD558%uAC8C</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::PointyButton" x="1180" y="67" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uD655%uC778</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::TextArea" x="1006" y="222" w="446" h="225" measuredW="200" measuredH="140" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>---%20%uC124%uBA85%0A%20%0A%20%0A%20%0A%20%0A%20%0A--%20%uC720%uC6A9%uD55C%20%uC2F8%uC774%uD2B8%0A%20%0A%20*%20www.naver.com%20%20%20%20%20%20%20%20%20kjryu@inbrein.com%202013-10-10%0A%20%0A--%20%uAD00%uB828%20%uC11C%uC801%0A%20%0A*%20%uB1CC%uB97C%20%uD30C%uBA39%uB294%20C%23%20%20%20%20%20%20%20%20kjryu@inbrein.com%202013-10-10%0A*%20%uB1CC%uB97C%20%uB4E4%20%uD30C%uBA39%uB294%20C%23%20%20%20%20kjryu@inbrein.com%202013-10-10%0A%20%0A%20%0A--%20%uC9C8%uBB38%20%uBAA9%uB85D%0A%20%0A*%20C%23%20%uC5B4%uB5BB%uAC8C%20%uD574%uC694%3F%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::PointyButton" x="1234" y="67" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uAC70%uBD80</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::HRule" x="1006" y="462" w="719" h="-1" measuredW="100" measuredH="10" zOrder="21" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
