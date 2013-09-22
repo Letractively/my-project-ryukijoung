@@ -1,0 +1,14 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="806" measuredH="436" mockupW="774" mockupH="429">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Title" x="32" y="7" w="-1" h="-1" measuredW="160" measuredH="43" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%uC2F8%uC774%uD2B8%uB9F5</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::SiteMap" x="98" y="126" w="-1" h="-1" measuredW="708" measuredH="310" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>MSQNA%0A-%20%uAE00%0A-%20%uD0DC%uADF8%0A--%20technical%0A--%20nontechnical%0A-%20tip%26tech%28Blog%29%0A-%20%uBC30%uC9C0%0A-%20Blog</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
