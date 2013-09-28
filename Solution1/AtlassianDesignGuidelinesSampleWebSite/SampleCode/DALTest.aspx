@@ -12,9 +12,12 @@
     <div>
     
     </div>
-         
         <asp:GridView ID="GridView1" runat="server" Height="378px" Width="585px">
         </asp:GridView>
+        <br />
+        json:시작
+        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+        json:끝
     </form>
 </body>
 </html>
