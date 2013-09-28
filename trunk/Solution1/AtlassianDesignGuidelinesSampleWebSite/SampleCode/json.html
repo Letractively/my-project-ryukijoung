@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+        (function () {
+            $.getJSON('json.txt', function (data) {
+                $.each(data.Table, function (key, state) {
+                    $('#asdf' + key).html('<div>' + key + ' : ' + state + '</div>');
+                });
+            });
+        })();
+    </script>
+    <title></title>
+</head>
+<body>
+    <div id="asdf0"></div>
+    <div id="asdf1"></div>
+    <div id="asdf2"></div>
+    <div id="asdf3"></div>
+    <div id="asdf4"></div>
+    <div id="asdf5"></div>
+    <div id="asdf6"></div>
+    <div id="asdf7"></div>
+</body>
+</html>
