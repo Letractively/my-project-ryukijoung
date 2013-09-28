@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using MAQNA.DAL;
 using System.Data;
 using Newtonsoft.Json;
+using System.Web.Services;
 
 public partial class DALTest : System.Web.UI.Page
 {
@@ -24,21 +25,26 @@ public partial class DALTest : System.Web.UI.Page
 
 
                 string resultJSON = String.Empty;
-                string enteredId = Console.ReadLine();
-
                 resultJSON = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
                 Literal1.Text = resultJSON;
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
 
-                //THE BELOW CODE WOULD NOT AND WILL NOT WORK !!!
-                //StringWriter sw = new StringWriter();
-
-                //JsonWriter jsw = new JsonTextWriter(sw);
-
-                //DataTableConverter dtc = new DataTableConverter();
-
-                //JsonSerializer js = new JsonSerializer();
-
-                //dtc.WriteJson(jsw, datatableResultSet, js);
+    [WebMethod]
+    public static string GetMessage()
+    {
+        try
+        {
+            DataSet dataSet = null;
+            using (Sample sample = new Sample())
+            {
+                dataSet = sample.GetSampleDBData();
+                return JsonConvert.SerializeObject(dataSet, Formatting.Indented);
             }
 
         }
