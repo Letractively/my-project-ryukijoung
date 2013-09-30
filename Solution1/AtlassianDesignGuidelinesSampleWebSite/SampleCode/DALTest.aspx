@@ -21,6 +21,7 @@
                     alert(data.d); // 단일값 : {d:'닷넷코리아'}
                 },
                 error: function (data) { alert('에러 발생'); }
+
             });
         });
     </script>
