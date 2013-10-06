@@ -27,6 +27,13 @@ public partial class DALTest : System.Web.UI.Page
                 string resultJSON = String.Empty;
                 resultJSON = JsonConvert.SerializeObject(dataSet, Formatting.Indented);
                 Literal1.Text = resultJSON;
+
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                //sb.Append(@"<script language="'javascript'">");
+                sb.Append(@"example();");
+                sb.Append(@"</script>");
+                System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "JCall1", sb.ToString(), false);
+
             }
         }
         catch (Exception)
