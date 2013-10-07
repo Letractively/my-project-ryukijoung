@@ -4,24 +4,49 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript">
-        (function () {
-            $.getJSON('json.txt', function (data) {
-                $.each(data.Table, function (key, state) {
-                    $('#asdf' + key).html('<div>' + key + ' : ' + state + '</div>');
+        $(document).ready(function () {
+            $("#ok").click(function () {
+                var params = "param1=" + $("#val1").val() + "&param2=" + $("#val2").val() + "&param3=" + $("#val3").val();
+                jQuery.ajax({
+                    type: "POST",
+                    url: "ReturnJSON.aspx",
+                    data: params,
+                    dateType: "JSON",
+                    success: function (data) {
+                        // 통신이 성공 했을 때
+                        $("#dynamic_html").html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        // error
+                        alert(xhr + ", " + status + ", " + error);
+                    }
                 });
             });
-        })();
+            $("#ok2").click(function () {
+                var json = $("#lblJSON").html();
+                var obj = jQuery.parseJSON(json);
+                $.each(obj, function (key, value) {
+                    $("#json").append("<br /><div>"+ key + "</div><br />");
+                    $.each(value, function (key2, val) {
+                        $("#json").append("<div>" + key2 + "</div><br/>");
+                        $.each(val, function (key3, v) {
+                            $("#json").append("<div>" + key3 + ":" + v + "</div><br/>");
+                        });
+                    });
+                });
+            });
+        });
     </script>
     <title></title>
 </head>
 <body>
-    <div id="asdf0"></div>
-    <div id="asdf1"></div>
-    <div id="asdf2"></div>
-    <div id="asdf3"></div>
-    <div id="asdf4"></div>
-    <div id="asdf5"></div>
-    <div id="asdf6"></div>
-    <div id="asdf7"></div>
+    <input type="text" id="val1" />
+    <input type="text" id="val2" />
+    <input type="text" id="val3" />
+    <input type="button" id="ok" value="ok" />
+    <input type="button" id="ok2" value="ok2" />
+    <br />
+    <div id="dynamic_html"></div>
+    <div id="json"></div>
 </body>
 </html>

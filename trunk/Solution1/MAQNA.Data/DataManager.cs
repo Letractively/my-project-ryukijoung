@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 
@@ -29,6 +30,29 @@ namespace MAQNA.Data
         /// <param name="sqlParameters">Parameter Array</param>
         /// <returns>결과 데이터</returns>
         public static DataSet ClExecuteDataSet(string storedProcedureName, SqlParameter[] sqlParameters)
+        {
+            DbCommand dbCommand = MyDatabase.GetStoredProcCommand(storedProcedureName);
+
+            if (sqlParameters != null)
+            {
+                foreach (SqlParameter param in sqlParameters)
+                {
+                    dbCommand.Parameters.Add(param);
+                }
+            }
+
+            DataSet dsBase = MyDatabase.ExecuteDataSet(dbCommand);
+
+            return dsBase;
+        }
+
+        /// <summary>
+        /// SP명과 파라메터를 입력받아 DataSet를 리턴한다.
+        /// </summary>
+        /// <param name="storedProcedureName">SP명</param>
+        /// <param name="sqlParameters">Parameter Array</param>
+        /// <returns>결과 데이터</returns>
+        public static DataSet ClExecuteDataSet(string storedProcedureName, List<SqlParameter> sqlParameters)
         {
             DbCommand dbCommand = MyDatabase.GetStoredProcCommand(storedProcedureName);
 
