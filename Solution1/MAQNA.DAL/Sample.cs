@@ -20,11 +20,12 @@ namespace MAQNA.DAL
 
         public DataSet GetSampleDBData()
         {
-            SqlParameter[] paramArray = new SqlParameter[] 
-            {               
-            };
-
-            dsReturn = DataManager.ClExecuteDataSet("TestSelect", paramArray);
+            dsReturn = DataManager.ClExecuteDataSet("TestSelect");
+            return dsReturn;
+        }
+        public DataSet GetSampleDBData(String spName, List<SqlParameter> param)
+        {
+            dsReturn = DataManager.ClExecuteDataSet(spName, param);
 
             return dsReturn;
         }
