@@ -23,6 +23,7 @@
                 });
             });
             $("#ok2").click(function () {
+                $("#json").html("");
                 var json = $("#lblJSON").html();
                 var obj = jQuery.parseJSON(json);
                 $.each(obj, function (key, value) {
@@ -35,6 +36,10 @@
                     });
                 });
             });
+            $("#clear").click(function () {
+                $("#dynamic_html").html("");
+                $("#json").html("");
+            });
         });
     </script>
     <title></title>
@@ -45,6 +50,7 @@
     <input type="text" id="val3" />
     <input type="button" id="ok" value="ok" />
     <input type="button" id="ok2" value="ok2" />
+    <input type="button" value="clear" id="clear" />
     <br />
     <div id="dynamic_html"></div>
     <div id="json"></div>
