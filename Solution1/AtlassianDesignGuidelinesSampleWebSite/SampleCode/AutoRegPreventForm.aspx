@@ -15,7 +15,9 @@
             <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
             <br />
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-        </div>
+            <br />
+            <br />
+            글쓰기 자동방지 이미지</div>
     </form>
 </body>
 </html>
