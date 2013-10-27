@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Index - API Documentation</title>
+        <title>ITQNA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -38,7 +38,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="index.html">MSQNA</a>
+                        <a class="brand" href="index.html">ITQNA</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
                                 <li class="active"><a href="index.html">질문</a></li>
@@ -99,7 +99,7 @@
                         
                         <!-- doc-index-block -->
                         <div class="doc-index-block">
-                            <h2 id="A">A</h2>
+                            <h2 id="A">A ITQNA 에 대하여 설명 </h2>
                             
                             <div class="index-item">
                                 <div class="index-header">
