@@ -57,6 +57,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bootstrap", "bootstrap\", "
 		VWDPort = "3009"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootStrapSample", "http://localhost:3016", "{3B89CB60-F570-4F1A-8908-E02D56793194}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3016"
+		Debug.AspNetCompiler.PhysicalPath = "BootStrapSample\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3016"
+		Release.AspNetCompiler.PhysicalPath = "BootStrapSample\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "BootStrapSample\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -87,6 +109,10 @@ Global
 		{4D0A4034-374C-41EA-B29A-EE4BD77F7316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D0A4034-374C-41EA-B29A-EE4BD77F7316}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D0A4034-374C-41EA-B29A-EE4BD77F7316}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
