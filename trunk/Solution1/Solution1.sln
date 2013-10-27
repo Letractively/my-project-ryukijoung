@@ -37,6 +37,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAQNA.DAL", "MAQNA.DAL\MAQN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwonTest", "GwonTest\GwonTest.csproj", "{DFE36753-723F-4B8D-B0DE-FE3DC264C09C}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bootstrap", "bootstrap\", "{4D0A4034-374C-41EA-B29A-EE4BD77F7316}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/bootstrap"
+		Debug.AspNetCompiler.PhysicalPath = "bootstrap\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\bootstrap\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/bootstrap"
+		Release.AspNetCompiler.PhysicalPath = "bootstrap\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\bootstrap\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3009"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -63,6 +83,10 @@ Global
 		{DFE36753-723F-4B8D-B0DE-FE3DC264C09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFE36753-723F-4B8D-B0DE-FE3DC264C09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFE36753-723F-4B8D-B0DE-FE3DC264C09C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D0A4034-374C-41EA-B29A-EE4BD77F7316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0A4034-374C-41EA-B29A-EE4BD77F7316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D0A4034-374C-41EA-B29A-EE4BD77F7316}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0A4034-374C-41EA-B29A-EE4BD77F7316}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
