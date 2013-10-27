@@ -1,6 +1,73 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAQNA.Data", "MAQNA.Data\MAQNA.Data.csproj", "{1D1550FB-4098-4D2C-8855-AA42E286982E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAQNA.DAL", "MAQNA.DAL\MAQNA.DAL.csproj", "{4CCB82EB-8C22-43A5-8BC1-ECBA22608238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwonTest", "GwonTest\GwonTest.csproj", "{DFE36753-723F-4B8D-B0DE-FE3DC264C09C}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bootstrap", "bootstrap\", "{4D0A4034-374C-41EA-B29A-EE4BD77F7316}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "Svn"
+		SccAuxPath = "Svn"
+		SccLocalPath = "Svn"
+		SccProvider = "SubversionScc"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/bootstrap"
+		Debug.AspNetCompiler.PhysicalPath = "bootstrap\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\bootstrap\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/bootstrap"
+		Release.AspNetCompiler.PhysicalPath = "bootstrap\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\bootstrap\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3009"
+	EndProjectSection
+	ProjectSection(SvnOrigin) = preProject
+		@Keys = Enlist,Svn.Uri
+		Enlist = Required
+		Svn.Uri = bootstrap/
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootStrapSample", "http://localhost:3016", "{3B89CB60-F570-4F1A-8908-E02D56793194}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "Svn"
+		SccAuxPath = "Svn"
+		SccLocalPath = "Svn"
+		SccProvider = "SubversionScc"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{4ccb82eb-8c22-43a5-8bc1-ecba22608238}|MAQNA.DAL.dll;{1D1550FB-4098-4D2C-8855-AA42E286982E}|MAQNA.Data.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3016"
+		Debug.AspNetCompiler.PhysicalPath = "BootStrapSample\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3016"
+		Release.AspNetCompiler.PhysicalPath = "BootStrapSample\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "BootStrapSample\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+	ProjectSection(SvnOrigin) = preProject
+		@Keys = Enlist,Svn.Uri
+		Enlist = Required
+		Svn.Uri = BootStrapSample/
+	EndProjectSection
+EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AtlassianDesignGuidelinesSampleWebSite", "AtlassianDesignGuidelinesSampleWebSite\", "{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "Svn"
@@ -31,54 +98,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AtlassianDesignGuidelinesSa
 		Svn.Uri = AtlassianDesignGuidelinesSampleWebSite/
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAQNA.Data", "MAQNA.Data\MAQNA.Data.csproj", "{1D1550FB-4098-4D2C-8855-AA42E286982E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAQNA.DAL", "MAQNA.DAL\MAQNA.DAL.csproj", "{4CCB82EB-8C22-43A5-8BC1-ECBA22608238}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwonTest", "GwonTest\GwonTest.csproj", "{DFE36753-723F-4B8D-B0DE-FE3DC264C09C}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "bootstrap", "bootstrap\", "{4D0A4034-374C-41EA-B29A-EE4BD77F7316}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/bootstrap"
-		Debug.AspNetCompiler.PhysicalPath = "bootstrap\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\bootstrap\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/bootstrap"
-		Release.AspNetCompiler.PhysicalPath = "bootstrap\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\bootstrap\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "3009"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootStrapSample", "http://localhost:3016", "{3B89CB60-F570-4F1A-8908-E02D56793194}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_3016"
-		Debug.AspNetCompiler.PhysicalPath = "BootStrapSample\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_3016"
-		Release.AspNetCompiler.PhysicalPath = "BootStrapSample\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "BootStrapSample\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -89,10 +108,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{1D1550FB-4098-4D2C-8855-AA42E286982E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D1550FB-4098-4D2C-8855-AA42E286982E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1550FB-4098-4D2C-8855-AA42E286982E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -113,6 +128,10 @@ Global
 		{3B89CB60-F570-4F1A-8908-E02D56793194}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B89CB60-F570-4F1A-8908-E02D56793194}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B89CB60-F570-4F1A-8908-E02D56793194}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A18BB4-8F2A-4B4B-BA07-89039979AD54}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
