@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="GwonTest.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FreeBoot.aspx.cs" Inherits="GwonTest.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -6,8 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link href="dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="freeBoot/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="freeBoot/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="theme.css" rel="stylesheet" />
 
 </head>
@@ -367,8 +367,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/holder.js"></script>
+    <script src="freeBoot/assets/js/jquery.js"></script>
+    <script src="freeBoot/dist/js/bootstrap.min.js"></script>
+    <script src="freeBoot/assets/js/holder.js"></script>
   </body>
 </html>
