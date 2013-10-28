@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Tag.aspx.cs" Inherits="Tag" %>
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -20,7 +22,6 @@
         <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="ico/favicon.png">
 
-
         <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
         <![endif]-->
@@ -41,11 +42,11 @@
                         <a class="brand" href="index.html">ITQNA</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
-                                <li class="active">
+                                <li>
                                     <a href="Default.aspx">Home</a></li>
                                 <li>
                                     <a href="QnA.aspx">질문</a></li>
-                                <li>
+                                <li class="active">
                                     <a href="Tag.aspx">태그</a></li>
                                 <li>
                                     <a href="Member.aspx">회원</a></li>
@@ -70,10 +71,9 @@
                 <div class="span3">
                     <!--sidebar -->
                     <ul class="nav nav-tabs nav-stacked">
-                        <!--
-                        <li><a href="content.html"><i class="icon-chevron-right pull-right"></i> 질문보기</a></li>
-                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 질문하기</a></li>
-                            -->
+                        <li><a href="content.html"><i class="icon-chevron-right pull-right"></i> 기술</a></li>
+                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 기타</a></li>
+                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 강좌</a></li>
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
