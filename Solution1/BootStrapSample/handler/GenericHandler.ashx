@@ -28,7 +28,7 @@ public class GenericHandler : IHttpHandler
         {
             methodName = context.Request.Params["name"].ToString();
 
-            switch (context.Request.Params["name"].ToString())
+            switch (methodName)
             {
                 case "GetDBDataSet":
                     context.Response.Write(GetDBDataSet());
@@ -36,8 +36,32 @@ public class GenericHandler : IHttpHandler
                 case "SetDBUpdate":
                     context.Response.Write(SetDBUpdate(context));
                     break;
+                case "SelectIdDup":
+                    context.Response.Write(SelectIdDup(methodName));
+                    break;
             }
         }
+    }
+
+    private string SelectIdDup(string spName)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+
+        try
+        {
+            response.IsSucess = true;
+            response.Message = "";
+            response.ResponseData = dbAccess.SpDBAccess(spName);
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+        }
+
+        return jSerializer.Serialize(response);
     }
 
     /// <summary>
