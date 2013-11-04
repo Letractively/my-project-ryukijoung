@@ -80,15 +80,28 @@
                     </div>
 
                     <div class="index-header">
-                                회원 아이디 : 
-                                        <input type="text">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.google.co.kr/images/srpr/logo11w.png" /></span><br/>
-                                회원 닉네임 : 
-                                        <input type="text">&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://3.bp.blogspot.com/-w0WUeKdk_8Q/UMiPqGsi8NI/AAAAAAAAOQo/iIdpJeZbUrw/s1600/Facebook-Logo.jpg"/><br/>
-                                비밀번호 : 
-                                        <input type="password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://abs.twimg.com/a/1382598364/images/resources/twitter-bird-white-on-blue.png" /><br/>
-                                비밀번호 확인 : 
-                                        <input type="password"><br/>
-                                <input type="button" value="회원가입" />
+                        <div id="userid">
+                            회원 아이디 : 
+                                        <input id="txtID" type="text"><input id="txtDup" type="text" value="" />
+                        </div>
+                        <div>
+                            회원 닉네임 : 
+                                        <input id="txtNick" type="text"><br />
+                        </div>
+                        <div>
+                            비밀번호 : 
+                                        <input id="txtPwd" type="password"><br />
+                        </div>
+                        <div>
+                            비밀번호 확인 : 
+                                        <input id="txtRePwd" type="password"><br />
+                        </div>
+                        <input id="Reg" type="button" value="회원가입" />
+                        <div>
+                            <a href="#">facebook</a>
+                            <a href="#">twitter</a>
+                            <a href="#">google</a>
+                        </div>
                     </div>
                 </div>
 
@@ -118,16 +131,6 @@
         ================================================== -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
-            });
-
-        });
-
-    </script>
+    <script src="js/Reg.js"></script>
 </body>
 </html>
