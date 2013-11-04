@@ -12,7 +12,7 @@ $(document).ready(function () {
 // 데이터 가져오기 Function 입니다.
 function GetData() {
     //Select
-    DoAjaxCall("GetDBDataSet", "", "GetDataCallBack", "");
+    DoAjaxCall("SelectIdDup", "", "GetDataCallBack", "");
 
     //Insert
     //DoAjaxCall("SetDBUpdate", "&parameter1=" + $("#txtparameter1").value + "&parameter2=" + $("#parameter2"), "SetDBUpdateCallBack", "");
