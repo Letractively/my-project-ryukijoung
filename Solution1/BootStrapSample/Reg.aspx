@@ -132,5 +132,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Reg.js"></script>
+    <script src="js/Common.js"></script>
 </body>
 </html>
