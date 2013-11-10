@@ -40,21 +40,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="index.html">ITQNA</a>
+                    <a class="brand" href="Default.aspx">ITQNA</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li>
-                                <a href="Default.aspx">Home</a></li>
+                                <a href="Default.aspx">ITQNA</a></li>
                             <li class="active">
                                 <a href="QnA.aspx">질문</a></li>
                             <li>
                                 <a href="Tag.aspx">태그</a></li>
                             <li>
-                                <a href="Member.aspx">회원</a></li>
-                            <li>
                                 <a href="Learn.aspx">강좌</a></li>
-                            <li>
-                                <a href="Propose.aspx">제안</a></li>
                             <li>
                                 <a href="Login.aspx">로그인</a></li>
                             <li>

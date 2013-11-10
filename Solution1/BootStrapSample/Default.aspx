@@ -38,21 +38,17 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="index.html">ITQNA</a>
+                        <a class="brand" href="Default.aspx">ITQNA</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
                                 <li class="active">
-                                    <a href="Default.aspx">Home</a></li>
+                                    <a href="Default.aspx">ITQNA</a></li>
                                 <li>
                                     <a href="QnA.aspx">질문</a></li>
                                 <li>
                                     <a href="Tag.aspx">태그</a></li>
                                 <li>
-                                    <a href="Member.aspx">회원</a></li>
-                                <li>
                                     <a href="Learn.aspx">강좌</a></li>
-                                <li>
-                                    <a href="Propose.aspx">제안</a></li>
                                 <li>
                                     <a href="Login.aspx">로그인</a></li>
                                 <li>
@@ -70,10 +66,8 @@
                 <div class="span3">
                     <!--sidebar -->
                     <ul class="nav nav-tabs nav-stacked">
-                        <!--
-                        <li><a href="content.html"><i class="icon-chevron-right pull-right"></i> 질문보기</a></li>
-                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 질문하기</a></li>
-                            -->
+                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 회원</a></li>
+                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 제안하기</a></li>
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
