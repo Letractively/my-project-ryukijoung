@@ -44,8 +44,6 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li>
-                                <a href="Default.aspx">ITQNA</a></li>
-                            <li>
                                 <a href="QnA.aspx">질문</a></li>
                             <li>
                                 <a href="Tag.aspx">태그</a></li>

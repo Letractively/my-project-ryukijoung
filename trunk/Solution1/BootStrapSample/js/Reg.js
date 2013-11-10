@@ -76,7 +76,6 @@ function GetData(data) {
 // 데이터 가져오기 콜백 Function 입니다.
 function GetDataCallBack(data) {
     if (data.column1 == "0") {
-        alert("");
         $("#txtDup").val("가입이 가능합니다.");
     }
     else {

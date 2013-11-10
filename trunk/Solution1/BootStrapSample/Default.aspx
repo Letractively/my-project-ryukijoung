@@ -41,8 +41,6 @@
                         <a class="brand" href="Default.aspx">ITQNA</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
-                                <li class="active">
-                                    <a href="Default.aspx">ITQNA</a></li>
                                 <li>
                                     <a href="QnA.aspx">질문</a></li>
                                 <li>
