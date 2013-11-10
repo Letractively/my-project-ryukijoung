@@ -9,7 +9,7 @@ data : Insert, Update,
 function DoAjaxCall(name, parameter, callBack, data) {
     $.ajax({
         type: "POST",
-        url: "http://localhost:3016/handler/GenericHandler.ashx?name=" + name + parameter,
+        url: "http://localhost:3016/handler/GenericHandler.ashx?name=" + name +"^"+ parameter,
         dataType : "json",
         data: data,
         success: function (data, textStatus) {

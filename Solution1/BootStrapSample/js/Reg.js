@@ -32,7 +32,7 @@ $(document).ready(function () {
                 return;
             }
             else {
-                GetData();
+                GetData(id.val());
             }
         }
     });
@@ -65,9 +65,9 @@ $(document).ready(function () {
 });
 
 // 데이터 가져오기 Function 입니다.
-function GetData() {
+function GetData(data) {
     //Select
-    DoAjaxCall("SelectIdDup", "", "GetDataCallBack", "");
+    DoAjaxCall("SelectIdDup", data, "GetDataCallBack", "");
 
     //Insert
     //DoAjaxCall("SetDBUpdate", "&parameter1=" + $("#txtparameter1").value + "&parameter2=" + $("#parameter2"), "SetDBUpdateCallBack", "");
@@ -75,16 +75,11 @@ function GetData() {
 
 // 데이터 가져오기 콜백 Function 입니다.
 function GetDataCallBack(data) {
-    var str = "<table border='1' style='width:500px;'>"
-    for (var i = 0; i < data.length; i++) {
-        str += "<tr><td>" + data[i].Test1 + "</td>";
-        str += "<td>" + data[i].Test2 + "</td>";
-        str += "<td>" + data[i].Test3 + "</td>";
-        str += "<td>" + data[i].Test4 + "</td>";
-        str += "<td>" + data[i].Test5 + "</td></tr>";
-
+    if (data.column1 == "0") {
+        alert("");
+        $("#txtDup").val("가입이 가능합니다.");
     }
-    str += "</table>";
-
-    $("#ListData").html(str);
+    else {
+        $("#txtDup").val("존재하는 E-mail입니다.");
+    }
 }
