@@ -11,9 +11,11 @@ using System.Data;
 /// </summary>
 public class DBAccess
 {
+    const string connectionString = @"Data Source=maqna.cafe24.com; Initial Catalog=maqna;Persist Security Info=True;User ID=maqna;Password=Imsqna1!";
     public List<DBAccessList> TestDBAccess()
 	{
-        string connectionString = @"Data Source=maqna.cafe24.com; Initial Catalog=maqna;Persist Security Info=True;User ID=maqna;Password=Imsqna1!";
+        //const string connectionString = @"Data Source=maqna.cafe24.com; Initial Catalog=maqna;Persist Security Info=True;User ID=maqna;Password=Imsqna1!";
+
         DataSet ds = new DataSet(); //반환받을 데이터 셋 입니다.
         //using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MAQNAConnection"].ConnectionString))
         using (SqlConnection conn = new SqlConnection(connectionString))
@@ -55,6 +57,39 @@ public class DBAccess
             }
        }
 	}
+
+    public DataSet SpDBAccess(String spName, List<SqlParameter> parameter)
+    {
+        DataSet ds = new DataSet(); //반환받을 데이터 셋 입니다.
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                command.CommandText = spName;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddRange(parameter.ToArray());
+
+                SqlDataAdapter adp = new SqlDataAdapter(command);
+                adp.Fill(ds);
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn.State != ConnectionState.Closed)
+                    conn.Close();
+            }
+        }
+    }
 }
 
 /// <summary>
