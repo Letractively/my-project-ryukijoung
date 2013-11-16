@@ -64,59 +64,36 @@
                 <div class="span3">
                     <!--sidebar -->
                     <ul class="nav nav-tabs nav-stacked">
-                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 회원</a></li>
-                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 제안하기</a></li>
+                        <li><a href="../User/Users.aspx"><i class="icon-chevron-right pull-right"></i> 회원</a></li>
+                        <li><a href="../User/Suggest.aspx"><i class="icon-chevron-right pull-right"></i> 제안하기</a></li>
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
                 <div class="span9">
                     <div class="doc-content-box">
                         <div class="doc-index">
-                            <a class="scroll" href="#A"><span class="label label-info">A</span></a>
-                            <a class="scroll" href="#B"><span class="label label-info">B</span></a>
-                            <a class="scroll" href="#C"><span class="label label-info">C</span></a>
-                            <a href="#D"><span class="label label-info">D</span></a>
-                            <a href="#E"><span class="label label-info">E</span></a>
-                            <a href="#F"><span class="label label-info">F</span></a>
-                            <a href="#G"><span class="label label-info">G</span></a>
-                            <a href="#H"><span class="label label-info">H</span></a>
-                            <a href="#I"><span class="label label-info">I</span></a>
-                            <a href="#J"><span class="label label-info">J</span></a>
-                            <a href="#K"><span class="label label-info">K</span></a>
-                            <a href="#L"><span class="label label-info">L</span></a>
-                            <a href="#M"><span class="label label-info">M</span></a>
-                            <a href="#N"><span class="label label-info">N</span></a>
-                            <a href="#O"><span class="label label-info">O</span></a>
-                            <a href="#P"><span class="label label-info">P</span></a>
-                            <a href="#Q"><span class="label label-info">Q</span></a>
-                            <a href="#R"><span class="label label-info">R</span></a>
-                            <a href="#S"><span class="label label-info">S</span></a>
-                            <a href="#T"><span class="label label-info">T</span></a>
-                            <a href="#U"><span class="label label-info">U</span></a>
-                            <a href="#V"><span class="label label-info">V</span></a>
-                            <a href="#W"><span class="label label-info">W</span></a>
-                            <a href="#X"><span class="label label-info">X</span></a>
-                            <a href="#Y"><span class="label label-info">Y</span></a>
-                            <a href="#Z"><span class="label label-info">Z</span></a>
-                            <a href="#_"><span class="label label-info">_</span></a>
+                            <a class="scroll" href="#A"><span class="label label-info">최신질문</span></a>
+                            <a class="scroll" href="#B"><span class="label label-info">최신답변</span></a>
+                            <a class="scroll" href="#C"><span class="label label-info">최신댓글</span></a>
+                            <a href="#D"><span class="label label-info">최신등록태그</span></a>
+                            <a href="#E"><span class="label label-info">최신가입자</span></a>
                         </div>
                         
                         <!-- doc-index-block -->
                         <div class="doc-index-block">
-                            <h2 id="A">A ITQNA 에 대하여 설명 </h2>
                             
                             <div class="index-item">
                                 <div class="index-header">
-                                    <a href="#">abort()</a>
+                                    <a href="#A">최신질문</a>
                                 </div>
                                 <div class="index-desc">
-                                    <p>method in class <a href="#">Abort</a></p>
+                                    <p><a href="#">Abort</a></p>
                                 </div>
                             </div><!-- /index-item -->
                             
                             <div class="index-item">
                                 <div class="index-header">
-                                    <a href="#">add()</a>
+                                    <a href="#">최신답변</a>
                                 </div>
                                 <div class="index-desc">
                                     <p>action method in class <a href="#">Users</a></p>
@@ -125,7 +102,7 @@
                             
                             <div class="index-item">
                                 <div class="index-header">
-                                    <a href="#">affix_status</a>
+                                    <a href="#">최신댓글</a>
                                 </div>
                                 <div class="index-desc">
                                     <p>property in class <a href="#">URI</a></p>
@@ -134,7 +111,7 @@
                             
                             <div class="index-item">
                                 <div class="index-header">
-                                    <a href="#">annotation()</a>
+                                    <a href="#">최신등록태그</a>
                                 </div>
                                 <div class="index-desc">
                                     <p>Lorem ipsum dolor sit amet, arcu libero molestie justo sit egestas, ut augue suspendisse massa, nec libero, pede magna <a href="#">eget</a></p>
@@ -143,7 +120,7 @@
                             
                             <div class="index-item">
                                 <div class="index-header">
-                                    <a href="#">annotationValue()</a>
+                                    <a href="#">최근가입자</a>
                                 </div>
                                 <div class="index-desc">
                                     <p>Lorem ipsum dolor sit amet, arcu libero molestie justo sit egestas, ut augue suspendisse massa, nec libero, pede magna <a href="#">eget</a></p>
@@ -152,52 +129,9 @@
                         </div><!-- /doc-index-block -->
                         
                         <!-- doc-index-block -->
-                        <div class="doc-index-block">
-                            <h2 id="B">B</h2>
-                            
-                            <div class="index-item">
-                                <div class="index-header">
-                                    <a href="#">basicBorder()</a>
-                                </div>
-                                <div class="index-desc">
-                                    <p>Lorem ipsum dolor sit amet, arcu libero molestie justo sit egestas, ut augue suspendisse massa, nec libero, pede magna <a href="#">eget</a></p>
-                                </div>
-                            </div><!-- /index-item -->
-                            
-                            <div class="index-item">
-                                <div class="index-header">
-                                    <a href="#">button()</a>
-                                </div>
-                                <div class="index-desc">
-                                    <p>Lorem ipsum dolor sit amet, arcu libero molestie justo sit egestas, ut augue suspendisse massa, nec libero, pede magna <a href="#">eget</a></p>
-                                </div>
-                            </div><!-- /index-item -->
-                        </div><!-- /doc-index-block -->
+                        <!-- /doc-index-block -->
                         
-                        <!-- doc-index-block -->
-                        <div class="doc-index-block">
-                            <h2 id="C">C</h2>
-                            
-                            <div class="index-item">
-                                <div class="index-header">
-                                    <a href="#">console()</a>
-                                </div>
-                                <div class="index-desc">
-                                    <p>Lorem ipsum dolor sit amet, arcu libero molestie justo sit egestas, ut augue suspendisse massa, nec libero, pede magna <a href="#">eget</a></p>
-                                </div>
-                            </div><!-- /index-item -->
-                            
-                            <div class="index-item">
-                                <div class="index-header">
-                                    <a href="#">button()</a>
-                                </div>
-                                <div class="index-desc">
-                                    <p>Lorem ipsum dolor sit amet, arcu libero molestie justo sit egestas, ut augue suspendisse massa, nec libero, pede magna <a href="#">eget</a></p>
-                                </div>
-                            </div><!-- /index-item -->
-                        </div><!-- /doc-index-block -->
-                        
-                        <div class="shadow-right"> </div><!-- shadow doc-content-box -->
+                        <!-- shadow doc-content-box -->
                     </div><!--/.doc-content-box -->
                 </div><!--/.span9 -->
             </div><!--/.row-fluid -->
