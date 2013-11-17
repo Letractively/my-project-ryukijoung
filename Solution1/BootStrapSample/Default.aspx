@@ -66,6 +66,7 @@
                     <ul class="nav nav-tabs nav-stacked">
                         <li><a href="../User/Users.aspx"><i class="icon-chevron-right pull-right"></i> 회원</a></li>
                         <li><a href="../User/Suggest.aspx"><i class="icon-chevron-right pull-right"></i> 제안하기</a></li>
+                    <li><a href="../User/MyInformation.aspx"><i class="icon-chevron-right pull-right"></i> 나의정보보기</a></li>
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
@@ -76,8 +77,7 @@
                             <a class="scroll" href="#B"><span class="label label-info">최신답변</span></a>
                             <a class="scroll" href="#C"><span class="label label-info">최신댓글</span></a>
                             <a href="#D"><span class="label label-info">최신등록태그</span></a>
-                            <a href="#E"><span class="label label-info">최신가입자</span></a>
-                        </div>
+                            <a href="#E"><span class="label label-info">최신가입자</span></a> * 로그인 하지 않았을경우 옆에 회원, 제안하기,나의정보보기가 메뉴가 안보임, 로그인 해야지만 보이게 처리</div>
                         
                         <!-- doc-index-block -->
                         <div class="doc-index-block">
