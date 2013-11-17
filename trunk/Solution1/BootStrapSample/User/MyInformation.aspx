@@ -66,7 +66,7 @@
                     <ul class="nav nav-tabs nav-stacked">
                         <li><a href="Users.aspx"><i class="icon-chevron-right pull-right"></i> 회원</a></li>
                         <li><a href="Suggest.aspx"><i class="icon-chevron-right pull-right"></i> 제안하기</a></li>
-                        <li><a href="Suggest.aspx"><i class="icon-chevron-right pull-right"></i> 나의정보보기</a></li>
+                        <li><a href="MyInformation.aspx"><i class="icon-chevron-right pull-right"></i> 나의정보보기</a></li>
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
@@ -75,40 +75,23 @@
                         <!-- /doc-index-block -->
                         
                         <!-- shadow doc-content-box -->
-                        <div class="doc-index">
-                        </div>
-                        
-                        <!-- doc-index-block -->
-                        <div class="doc-index-block">
-                            
-                            <div class="index-item">
-                                <div class="index-header">
-                                    <a href="#A">회원 검색 
-                                        <input id="txtID" type="text">&nbsp; </a>&nbsp;<input id="Reg" type="button" value="검색" /></div>
-                            </div>
-                            <!-- /index-item -->
-                            
-                        </div>
-                        <div class="doc-index-block">
-                            
-                            <div class="index-item">
-                                <div class="index-header">
-                                    회원 <a href="#A">리스트 &nbsp; </a>&nbsp;</div>
-                            </div>
-                            <!-- /index-item -->
-                            
-                        </div>
-
-                        <div class="doc-index-block">
-
-                            <a href="http://stackoverflow.com/users">http://stackoverflow.com/users</a> 참조 사진 없이
-                            <br />
-                            <br />
-                            나와야할 정보 :&nbsp; 닉네임, 질문 갯수, 답글 갯수, 강좌 등록 갯수, 선호하는 태그3개만<br />
-                            <br />
-                            페이징 처리<br />
-
-                            </div>
+                        나의 정보 보기<br />
+                        <br />
+                        회원 닉네임 --&gt;<a href="#A"><input id="txtID" type="text"></a> <input id="Reg" type="button" value="변경" /><br />
+                        회원 아이디
+                        <br />
+                        위치 : 대한민국 서울<br />
+                        비밀번호 변경 --&gt;<a href="#A"><input id="txtID0" type="text"></a> <input id="Reg0" type="button" value="변경" /><br />
+                        <br />
+                        선호하는 태그3개 리스트
+                                    <a href="#A"> 
+                                        <input id="txtID1" type="text"></a> <input id="Reg1" type="button" value="변경" /><br />
+                        <br />
+                        자기 소개 -- &gt;&nbsp;
+                                    <a href="#A"> 
+                                        <input id="txtID2" type="text"></a> <input id="Reg2" type="button" value="변경" /><br />
+                        <br />
+&nbsp;<br />
                     </div><!--/.doc-content-box -->
                 </div><!--/.span9 -->
             </div><!--/.row-fluid -->
@@ -119,7 +102,9 @@
         <footer>
             <div class="footer">
                 <div class="container">
-                    <p>Copyright &copy; 2013. All rights reserved.            </div>
+                    <p>Copyright &copy; 2013. All rights reserved.</p>
+                </div>
+            </div>
         </footer><!--/.footer -->
 
         
