@@ -40,6 +40,10 @@ public class GenericHandler : IHttpHandler
                 case "SelectIdDup":
                     context.Response.Write(SelectIdDup(parameter[0], parameter[1]));
                     break;
+                case "SetDBDataSet":
+                    string textData = context.Request.Form[0].ToString();
+                    context.Response.Write(SetDBDataSet(textData));
+                    break;
             }
         }
     }
@@ -97,6 +101,26 @@ public class GenericHandler : IHttpHandler
             response.IsSucess = true;
             response.Message = "";
             response.ResponseData = list;
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+
+        }
+        return jSerializer.Serialize(response);
+    }
+
+    private string SetDBDataSet(string textData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            response.IsSucess = true;
+            response.Message = "";
+            response.ResponseData = textData;
         }
         catch (Exception ex)
         {
