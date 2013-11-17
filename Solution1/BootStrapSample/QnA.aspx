@@ -75,9 +75,10 @@
             </div>
             <!--/.span3 -->
             <div class="span9">
+                <input type="text" id="askTitle" />
                 <textarea class="ckeditor" name="editor1"></textarea>
                 <br />
-                <input onclick="GetContents();" type="button" value="확인" />
+                <input onclick="SetContents();" type="button" value="확인" />
                 <div id="editorcontents"></div>
             </div>
         </div>
@@ -115,6 +116,13 @@
 
         function GetContents() {
             document.getElementById('editorcontents').innerHTML = CKEDITOR.instances.editor1.getData();
+        }
+
+        function SetContents() {
+            var title = document.getElementById('askTitle').value;
+            var ask = htmlEscape(CKEDITOR.instances.editor1.getData());
+            var data = { "spname": "maqna.Ask_Insert", "title": title, "ask": ask };
+            DoAjaxCall('SetDBDataSet', '', '', data);
         }
     </script>
 </body>
