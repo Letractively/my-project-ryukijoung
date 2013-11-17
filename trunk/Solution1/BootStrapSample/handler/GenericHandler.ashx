@@ -7,6 +7,7 @@ using System.Web.Script.Serialization;
 using System.Data;
 using MAQNA.DAL;
 using Newtonsoft.Json;
+using System.Collections.Specialized;
 
 /// <summary>
 /// JSON 형식을 리턴하기위한 제네릭 핸들러 입니다.
@@ -41,15 +42,12 @@ public class GenericHandler : IHttpHandler
                     context.Response.Write(SelectIdDup(parameter[0], parameter[1]));
                     break;
                 case "SetDBDataSet":
-                    string textData = context.Request.Form[0].ToString();
-                    context.Response.Write(SetDBDataSet(textData));
+                    context.Response.Write(SetDBDataSet(context.Request.Form));
                     break;
             }
         }
     }
-
-
-
+    
     private string SelectIdDup(string spname, string userid)
     {
         JsonResponse response = new JsonResponse();
@@ -111,21 +109,33 @@ public class GenericHandler : IHttpHandler
         return jSerializer.Serialize(response);
     }
 
-    private string SetDBDataSet(string textData)
+    private string SetDBDataSet(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
         JavaScriptSerializer jSerializer = new JavaScriptSerializer();
         string jsonData = string.Empty;
         try
         {
+            string spName = formData[0];
+            int userId = 1;  // 세션에서 읽어와야함
+            string title = formData[1];
+            string ask = formData[2];
+            
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", userId));
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskTitle", title));
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskDoc", ask));
+
             response.IsSucess = true;
             response.Message = "";
-            response.ResponseData = textData;
+            DataSet ds = dbAccess.SpDBAccess(spName, param);
+            response.ResponseData = true;
         }
         catch (Exception ex)
         {
             response.Message = ex.Message;
             response.IsSucess = false;
+            response.ResponseData = false;
 
         }
         return jSerializer.Serialize(response);
