@@ -43,11 +43,11 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
                                 <li>
-                                    <a href="QnA.aspx">질문</a></li>
+                                    <a href="../QNA/Question.aspx">질문</a></li>
                                 <li>
-                                    <a href="Tag.aspx">태그</a></li>
+                                    <a href="../Tag/Tach.aspx">태그</a></li>
                                 <li class="active">
-                                    <a href="Learn.aspx">강좌</a></li>
+                                    <a href="View.aspx">강좌</a></li>
                                 <li>
                                     <a href="Login.aspx">로그인</a></li>
                                 <li>
