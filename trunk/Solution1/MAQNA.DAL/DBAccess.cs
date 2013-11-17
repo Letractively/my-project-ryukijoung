@@ -12,7 +12,7 @@ using System.Data;
 public class DBAccess
 {
     const string connectionString = @"Data Source=maqna.cafe24.com; Initial Catalog=maqna;Persist Security Info=True;User ID=maqna;Password=Imsqna1!";
-    public List<DBAccessList> TestDBAccess()
+    public List<z> TestDBAccess()
 	{
         //const string connectionString = @"Data Source=maqna.cafe24.com; Initial Catalog=maqna;Persist Security Info=True;User ID=maqna;Password=Imsqna1!";
 
