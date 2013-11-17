@@ -38,17 +38,26 @@ function htmlEscape(str) {
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;')
             .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
+            .replace(/>/g, '&gt;')
+            .replace(/ /g, '&nbsp;');
     return ret;
 }
 
 function htmlUnescape(value) {
+    //var ret = String(value)
+    //    .replace(/&quot;/g, '"')
+    //    .replace(/&#39;/g, "'")
+    //    .replace(/&lt;/g, '<')
+    //    .replace(/&gt;/g, '>')
+    //    .replace(/&amp;/g, '&');
+
     var ret = String(value)
-        .replace(/&quot;/g, '"')
-        .replace(/&#39;/g, "'")
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&amp;/g, '&');
+        .replace(/,quot;/g, '"')
+        .replace(/,#39;/g, "'")
+        .replace(/,lt;/g, '<')
+        .replace(/,gt;/g, '>')
+        .replace(/,amp;/g, '&')
+        .replace(/,nbsp;/g, ' ');
     return ret;
 }
 
