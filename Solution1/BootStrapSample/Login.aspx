@@ -44,15 +44,15 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li>
-                                <a href="QnA.aspx">질문</a></li>
+                                <a href="QNA/Answer.aspx">질문</a></li>
                             <li>
-                                <a href="Tag.aspx">태그</a></li>
+                                <a href="Tag/Tach.aspx">태그</a></li>
                             <li>
-                                <a href="Learn.aspx">강좌</a></li>
+                                <a href="Learn/View.aspx">강좌</a></li>
                             <li class="active">
-                                <a href="Login.aspx">로그인</a></li>
+                                <a href="../Login.aspx">로그인</a></li>
                             <li>
-                                <a href="Reg.aspx">회원가입</a></li>
+                                <a href="../Reg.aspx">회원가입</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -80,9 +80,14 @@
             <div class="span9">
                 <div class="doc-content-box">
                     <div><a href="">facebook</a></div>
-                    <div><a href="">twitter</a></div>
-                    <div><a href="">google</a></div>
-                    <div><a href="#" onclick="window.open('LoginPop.aspx', 'maqna', 'width=300, height=200')">maqna</a></div>
+                    <div><a href="#">twitter</a></div>
+                    <div><a href="#">google</a></div>
+                    <div><a id="maqna" href="javascript:void(0)">maqna</a>
+                        <div id="LoginControls" style="display:none;">아이디 : <input type="text"><br/>
+                            비밀번호 : <input type="text"><br/>
+                            <input type="button" value="확인">
+                        </div>
+                    </div>
                 </div>
                 <!--/.doc-content-box -->
             </div>
@@ -109,16 +114,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Common.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
-            });
-
-        });
-
-    </script>
+    <script src="js/Login.js"></script>
 </body>
 </html>

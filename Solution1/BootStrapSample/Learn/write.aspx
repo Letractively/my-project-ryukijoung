@@ -39,7 +39,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="Default.aspx">ITQNA</a>
+                        <a class="brand" href="../Default.aspx">ITQNA</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
                                 <li>
@@ -49,9 +49,9 @@
                                 <li class="active">
                                     <a href="View.aspx">강좌</a></li>
                                 <li>
-                                    <a href="Login.aspx">로그인</a></li>
+                                    <a href="../Login.aspx">로그인</a></li>
                                 <li>
-                                    <a href="Reg.aspx">회원가입</a></li>
+                                    <a href="../Reg.aspx">회원가입</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>

@@ -48,9 +48,9 @@
                                 <li>
                                     <a href="Learn/View.aspx">강좌</a></li>
                                 <li>
-                                    <a href="Login.aspx">로그인</a></li>
+                                    <a href="../Login.aspx">로그인</a></li>
                                 <li>
-                                    <a href="Reg.aspx">회원가입</a></li>
+                                    <a href="../Reg.aspx">회원가입</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>
