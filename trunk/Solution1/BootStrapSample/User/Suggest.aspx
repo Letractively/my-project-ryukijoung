@@ -42,11 +42,11 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
                                 <li>
-                                    <a href="../QnA.aspx">질문</a></li>
+                                    <a href="../QNA/Answer.aspx">질문</a></li>
                                 <li>
-                                    <a href="../Tag.aspx">태그</a></li>
+                                    <a href="../Tag/Tach.aspx">태그</a></li>
                                 <li>
-                                    <a href="../Learn.aspx">강좌</a></li>
+                                    <a href="../Learn/View.aspx">강좌</a></li>
                                 <li>
                                     <a href="../Login.aspx">로그인</a></li>
                                 <li>
@@ -64,8 +64,8 @@
                 <div class="span3">
                     <!--sidebar -->
                     <ul class="nav nav-tabs nav-stacked">
-                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 회원</a></li>
-                        <li><a href="#"><i class="icon-chevron-right pull-right"></i> 제안하기</a></li>
+                        <li><a href="Users.aspx"><i class="icon-chevron-right pull-right"></i> 회원</a></li>
+                        <li><a href="Suggest.aspx"><i class="icon-chevron-right pull-right"></i> 제안하기</a></li>
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
@@ -220,14 +220,14 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/Common.js"></script>
         <script type="text/javascript">
-            jQuery(document).ready(function ($) {
+            //jQuery(document).ready(function ($) {
 
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
-                });
+            //    $(".scroll").click(function (event) {
+            //        event.preventDefault();
+            //        $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
+            //    });
 
-            });
+            //});
 
         </script>
     </body>
