@@ -104,6 +104,7 @@
                             <a href="http://stackoverflow.com/users">http://stackoverflow.com/users</a> 참조 사진 없이
                             <br />
                             <br />
+                            <br />
                             나와야할 정보 :&nbsp; 닉네임, 질문 갯수, 답글 갯수, 강좌 등록 갯수, 선호하는 태그3개만<br />
                             <br />
                             페이징 처리<br />
