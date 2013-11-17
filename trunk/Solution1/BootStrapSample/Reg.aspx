@@ -76,7 +76,7 @@
                     <div class="index-header">
                         <div id="userid">
                             회원 아이디 : 
-                                        <input id="txtID" type="text"><input id="txtDup" type="text" value="" />
+                                        <input id="txtID" type="text"><input id="result" type="text" value="" />
                         </div>
                         <div>
                             회원 닉네임 : 
