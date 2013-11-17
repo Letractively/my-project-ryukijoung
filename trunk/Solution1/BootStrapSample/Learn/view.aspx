@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Write.aspx.cs" Inherits="Learn" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="View.aspx.cs" Inherits="Learn" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
