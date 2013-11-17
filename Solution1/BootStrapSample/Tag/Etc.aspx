@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Write.aspx.cs" Inherits="Learn" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Etc.aspx.cs" Inherits="Tag" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,7 +21,6 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
         <link rel="shortcut icon" href="ico/favicon.png">
-
 
         <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
@@ -44,10 +44,10 @@
                             <ul class="nav pull-right">
                                 <li>
                                     <a href="../QNA/Question.aspx">질문</a></li>
-                                <li>
-                                    <a href="../Tag/Tach.aspx">태그</a></li>
                                 <li class="active">
-                                    <a href="View.aspx">강좌</a></li>
+                                    <a href="Tach.aspx">태그</a></li>
+                                <li>
+                                    <a href="../Learn/View.aspx">강좌</a></li>
                                 <li>
                                     <a href="Login.aspx">로그인</a></li>
                                 <li>
@@ -65,8 +65,9 @@
                 <div class="span3">
                     <!--sidebar -->
                     <ul class="nav nav-tabs nav-stacked">
-                        <li><a href="Write.aspx"><i class="icon-chevron-right pull-right"></i> 강좌쓰기</a></li>
-                        <li><a href="View.aspx"><i class="icon-chevron-right pull-right"></i> 강좌보기</a></li>
+                        <li><a href="Tach.aspx"><i class="icon-chevron-right pull-right"></i> 기술</a></li>
+                        <li><a href="Etc.aspx"><i class="icon-chevron-right pull-right"></i> 기타</a></li>
+                        <li><a href="Learn.aspx"><i class="icon-chevron-right pull-right"></i> 강좌</a></li>
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
@@ -222,7 +223,6 @@
         <script src="js/Common.js"></script>
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
-
                 $(".scroll").click(function (event) {
                     event.preventDefault();
                     $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
