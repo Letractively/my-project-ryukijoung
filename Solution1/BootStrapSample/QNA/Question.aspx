@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="QnA.aspx.cs" Inherits="QnA" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Question.aspx.cs" Inherits="Question" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +44,9 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="active">
-                                <a href="../QNA/Question.aspx">질문</a></li>
+                                <a href="Question.aspx">질문</a></li>
                             <li>
-                                <a href="Tag.aspx">태그</a></li>
+                                <a href="../Tag/Tach.aspx">태그</a></li>
                             <li>
                                 <a href="../Learn/View.aspx">강좌</a></li>
                             <li>
@@ -68,8 +68,8 @@
             <div class="span3">
                 <!--sidebar -->
                 <ul class="nav nav-tabs nav-stacked">
-                    <li><a href="Question.aspx"><i class="icon-chevron-right pull-right"></i>질문보기</a></li>
-                    <li><a href="Answer.aspx"><i class="icon-chevron-right pull-right"></i>질문하기</a></li>
+                    <li><a href="Answer.aspx"><i class="icon-chevron-right pull-right"></i>질문보기</a></li>
+                    <li><a href="Question.aspx"><i class="icon-chevron-right pull-right"></i>질문하기</a></li>
                 </ul>
                 <!--/.sidebar -->
             </div>
