@@ -16,7 +16,7 @@ using System.Collections.Specialized;
 public class GenericHandler : IHttpHandler
 {
     DBAccess dbAccess = new DBAccess(); //DB에 엑세스 하기위한 클래스 입니다.
-    string[] parameter = { };
+
     /// <summary>
     /// Common에서 요청된 HttpContext내용을 처리 합니다.
     /// </summary>
@@ -28,9 +28,10 @@ public class GenericHandler : IHttpHandler
         //전달받은 메서드 이름에따라 분기
         if (context.Request.Params["name"] != null)
         {
-            parameter = context.Request.Params["name"].ToString().Split('^');
+            string spName = string.Empty;
+            spName = context.Request.Params["name"].ToString();
 
-            switch (parameter[0])
+            switch (spName)
             {
                 case "GetDBDataSet":
                     context.Response.Write(GetDBDataSet());
@@ -38,16 +39,66 @@ public class GenericHandler : IHttpHandler
                 case "SetDBUpdate":
                     context.Response.Write(SetDBUpdate(context));
                     break;
-                case "SelectIdDup":
-                    context.Response.Write(SelectIdDup(parameter[0], parameter[1]));
+                case "IdDup_Select":
+                    if (context.Request.Params["UserId"] != null)
+                    {
+                        context.Response.Write(SelectIdDup(spName, context.Request.Params["UserId"].ToString()));
+                    }
+                    break;
+                case "SetDBDataSet":
+                    context.Response.Write(SetDBDataSet(context.Request.Form));
                     break;
                 case "AskInsert":
                     context.Response.Write(AskInsert(context.Request.Form));
                     break;
+                case "User_Insert":
+                    Dictionary<string, string> parameter = new Dictionary<string, string>();
+                    if (context.Request.Params["UserId"] != null && context.Request.Params["NickName"] != null && context.Request.Params["PassWd"] != null)
+                    {
+                        parameter.Add("UserId", context.Request.Params["UserId"].ToString());
+                        parameter.Add("NickName", context.Request.Params["NickName"].ToString());
+                        parameter.Add("PassWd", context.Request.Params["PassWd"].ToString());
+                        context.Response.Write(InsertUser(spName, parameter));
+                    }
+                    break;
             }
         }
     }
-    
+
+    private class UserInsert
+    {
+        public int Sucess { get; set; }
+    }
+
+    private string InsertUser(string spname, Dictionary<string, string> parameter)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+
+        try
+        {
+            UserInsert user = new UserInsert();
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@UserId", parameter["UserId"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@NickName", parameter["NickName"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UserPW", parameter["PassWd"]));
+
+            response.IsSucess = true;
+            response.Message = "";
+            user.Sucess = dbAccess.NonQueryDBAccess(spname, param);
+            response.ResponseData = user;
+
+            return jSerializer.Serialize(response);
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            return jSerializer.Serialize(response);
+        }
+    }
+
     private string SelectIdDup(string spname, string userid)
     {
         JsonResponse response = new JsonResponse();
@@ -63,15 +114,15 @@ public class GenericHandler : IHttpHandler
             response.Message = "";
             DataSet ds = dbAccess.SpDBAccess(spname, param);
             Dictionary<string, string> dicResult = new Dictionary<string, string>();
-            
+
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-			{
+            {
                 for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
                 {
                     dicResult.Add(ds.Tables[0].Columns[j].ColumnName.ToString()
                         , ds.Tables[0].Rows[i][j].ToString());
                 }
-			}
+            }
             response.ResponseData = dicResult;
 
             return jSerializer.Serialize(response);
@@ -109,6 +160,38 @@ public class GenericHandler : IHttpHandler
         return jSerializer.Serialize(response);
     }
 
+    private string SetDBDataSet(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            string spName = formData[0];
+            int userId = 1;  // 세션에서 읽어와야함
+            string title = formData[1];
+            string ask = formData[2];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", userId));
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskTitle", title));
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskDoc", ask));
+
+            response.IsSucess = true;
+            response.Message = "";
+            DataSet ds = dbAccess.SpDBAccess(spName, param);
+            response.ResponseData = true;
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+
+        }
+        return jSerializer.Serialize(response);
+    }
+
     private string AskInsert(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
@@ -119,7 +202,7 @@ public class GenericHandler : IHttpHandler
             int userId = 1;  // 세션에서 읽어와야함
             string title = formData[0];
             string ask = formData[1];
-            
+
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", userId));
             param.Add(new System.Data.SqlClient.SqlParameter("@AskTitle", title));
