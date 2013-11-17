@@ -6,6 +6,7 @@
 
 // 문서 시작 Function 입니다.
 $(document).ready(function () {
+    var result = $("#result");
     var id = $("#txtID");
     var dupId = $("#txtDup");
     var nick = $("#txtNick");
@@ -32,7 +33,8 @@ $(document).ready(function () {
                 return;
             }
             else {
-                GetData(id.val());
+                var parameter = "&UserId=" + id.val();
+                GetData("IdDup_Select", parameter);
             }
         }
     });
@@ -57,17 +59,22 @@ $(document).ready(function () {
             pwd.val("");
             repwd.val("");
             pwd.focus();
+            result.val("비밀번호가 다름니다.");
             return;
         }
 
-        location.href = "Default.aspx";
+        var parameter = "&UserId=" + id.val();
+        parameter += "&NickName=" + nick.val();
+        parameter += "&PassWd=" + pwd.val();
+
+        GetData("User_Insert", parameter);
     });
 });
 
 // 데이터 가져오기 Function 입니다.
-function GetData(data) {
+function GetData(spname, data) {
     //Select
-    DoAjaxCall("SelectIdDup", data, "GetDataCallBack", "");
+    DoAjaxCall(spname, data, "GetDataCallBack", "");
 
     //Insert
     //DoAjaxCall("SetDBUpdate", "&parameter1=" + $("#txtparameter1").value + "&parameter2=" + $("#parameter2"), "SetDBUpdateCallBack", "");
@@ -75,10 +82,21 @@ function GetData(data) {
 
 // 데이터 가져오기 콜백 Function 입니다.
 function GetDataCallBack(data) {
-    if (data.column1 == "0") {
-        $("#txtDup").val("가입이 가능합니다.");
+    if (data.Column1 != "undefined") {
+        if (data.Column1 == "0") {
+            $("#result").val("가입이 가능합니다.");
+        }
+        else {
+            $("#result").val("존재하는 E-mail입니다.");
+        }
     }
-    else {
-        $("#txtDup").val("존재하는 E-mail입니다.");
+
+    if (data.Sucess != undefined) {
+        if (data.Sucess == "1") {
+            location.href = "Default.aspx";
+        }
+        else {
+            alert("회원가입이 되지 않았습니다.");
+        }
     }
 }
