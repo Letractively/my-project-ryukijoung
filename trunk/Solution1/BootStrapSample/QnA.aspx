@@ -121,8 +121,8 @@
         function SetContents() {
             var title = document.getElementById('askTitle').value;
             var ask = htmlEscape(CKEDITOR.instances.editor1.getData());
-            var data = { "spname": "maqna.Ask_Insert", "title": title, "ask": ask };
-            DoAjaxCall('SetDBDataSet', '', '', data);
+            var data = { "title": title, "ask": ask };
+            DoAjaxCall('AskInsert', '', '', data);
         }
     </script>
 </body>

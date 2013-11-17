@@ -41,8 +41,8 @@ public class GenericHandler : IHttpHandler
                 case "SelectIdDup":
                     context.Response.Write(SelectIdDup(parameter[0], parameter[1]));
                     break;
-                case "SetDBDataSet":
-                    context.Response.Write(SetDBDataSet(context.Request.Form));
+                case "AskInsert":
+                    context.Response.Write(AskInsert(context.Request.Form));
                     break;
             }
         }
@@ -109,17 +109,16 @@ public class GenericHandler : IHttpHandler
         return jSerializer.Serialize(response);
     }
 
-    private string SetDBDataSet(NameValueCollection formData)
+    private string AskInsert(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
         JavaScriptSerializer jSerializer = new JavaScriptSerializer();
         string jsonData = string.Empty;
         try
         {
-            string spName = formData[0];
             int userId = 1;  // 세션에서 읽어와야함
-            string title = formData[1];
-            string ask = formData[2];
+            string title = formData[0];
+            string ask = formData[1];
             
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", userId));
@@ -128,7 +127,7 @@ public class GenericHandler : IHttpHandler
 
             response.IsSucess = true;
             response.Message = "";
-            DataSet ds = dbAccess.SpDBAccess(spName, param);
+            DataSet ds = dbAccess.SpDBAccess("maqna.Ask_Insert", param);
             response.ResponseData = true;
         }
         catch (Exception ex)
