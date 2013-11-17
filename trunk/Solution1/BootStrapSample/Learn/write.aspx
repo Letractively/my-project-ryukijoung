@@ -9,9 +9,9 @@
         <meta name="author" content="">
 
         <!-- styles -->
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="css/bootstrap-doc.css" rel="stylesheet">
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../css/bootstrap-doc.css" rel="stylesheet">
 
 
         <!-- favicon -->
@@ -217,18 +217,18 @@
         
         <!-- javascript
         ================================================== -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/Common.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/Common.js"></script>
         <script type="text/javascript">
-            jQuery(document).ready(function ($) {
+            //jQuery(document).ready(function ($) {
 
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
-                });
+            //    $(".scroll").click(function (event) {
+            //        event.preventDefault();
+            //        $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
+            //    });
 
-            });
+            //});
 
         </script>
     </body>

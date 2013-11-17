@@ -10,9 +10,9 @@
     <meta name="author" content="">
 
     <!-- styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="css/bootstrap-doc.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/bootstrap-doc.css" rel="stylesheet">
 
 
     <!-- favicon -->
@@ -68,8 +68,8 @@
             <div class="span3">
                 <!--sidebar -->
                 <ul class="nav nav-tabs nav-stacked">
-                    <li><a href="Question.aspx"><i class="icon-chevron-right pull-right"></i>질문보기</a></li>
-                    <li><a href="Answer.aspx"><i class="icon-chevron-right pull-right"></i>질문하기</a></li>
+                    <li><a href="Answer.aspx"><i class="icon-chevron-right pull-right"></i>질문보기</a></li>
+                    <li><a href="Question.aspx"><i class="icon-chevron-right pull-right"></i>질문하기</a></li>
                 </ul>
                 <!--/.sidebar -->
             </div>
@@ -98,8 +98,8 @@
 
     <!-- javascript
         ================================================== -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Common.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Common.js"></script>
 </body>
 </html>
