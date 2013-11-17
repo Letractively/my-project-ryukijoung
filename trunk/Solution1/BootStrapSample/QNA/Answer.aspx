@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="QnA.aspx.cs" Inherits="QnA" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Answer.aspx.cs" Inherits="QnA" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,15 +68,14 @@
             <div class="span3">
                 <!--sidebar -->
                 <ul class="nav nav-tabs nav-stacked">
-                    <li><a href="#"><i class="icon-chevron-right pull-right"></i>질문보기</a></li>
-                    <li><a href="#"><i class="icon-chevron-right pull-right"></i>질문하기</a></li>
+                    <li><a href="Question.aspx"><i class="icon-chevron-right pull-right"></i>질문보기</a></li>
+                    <li><a href="Answer.aspx"><i class="icon-chevron-right pull-right"></i>질문하기</a></li>
                 </ul>
                 <!--/.sidebar -->
             </div>
             <!--/.span3 -->
             <div class="span9">
-                <textarea class="ckeditor" name="editor1"></textarea>
-                <br />
+                &nbsp;<br />
                 <input onclick="GetContents();" type="button" value="확인" />
                 <div id="editorcontents"></div>
             </div>
@@ -101,21 +100,6 @@
         ================================================== -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/ckeditor.js"></script>
     <script src="js/Common.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
-            });
-
-        });
-
-        function GetContents() {
-            document.getElementById('editorcontents').innerHTML = CKEDITOR.instances.editor1.getData();
-        }
-    </script>
 </body>
 </html>
