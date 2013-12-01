@@ -56,6 +56,12 @@ public class GenericHandler : IHttpHandler
                 case "SetAsk":
                     context.Response.Write(SetAsk(context.Request.Form));
                     break;
+                case "GetAskDetail":
+                    context.Response.Write(GetAskDetail(context.Request.Form));
+                    break;
+                case "SetAnswer":
+                    context.Response.Write(SetAnswer(context.Request.Form));
+                    break;
                 case "UserReg":
                     parameter = new Dictionary<string, string>();
                     if (context.Request.Params["UserId"] != null && context.Request.Params["NickName"] != null && context.Request.Params["PassWd"] != null)
@@ -87,7 +93,7 @@ public class GenericHandler : IHttpHandler
 
         try
         {
-            Login user = new Login();
+            UserInfo user = new UserInfo();
             DataSet ds = null;
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@UserId", parameter["UserId"]));
@@ -114,6 +120,18 @@ public class GenericHandler : IHttpHandler
         }
     }
 
+    private class UserInfo
+    {
+        public string Seq { get; set; }
+        public string UserId { get; set; }
+        public string UserNick { get; set; }
+    }
+
+    private class UserInsert
+    {
+        public int Sucess { get; set; }
+    }
+
     private string InsertUser(string spname, Dictionary<string, string> parameter)
     {
         JsonResponse response = new JsonResponse();
@@ -122,7 +140,7 @@ public class GenericHandler : IHttpHandler
 
         try
         {
-            Reg user = new Reg();
+            UserInsert user = new UserInsert();
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@UserId", parameter["UserId"]));
             param.Add(new System.Data.SqlClient.SqlParameter("@NickName", parameter["NickName"]));
@@ -284,6 +302,63 @@ public class GenericHandler : IHttpHandler
             response.IsSucess = true;
             response.Message = "";
             dbAccess.NonQueryDBAccess("maqna.Ask_Insert", param);
+            response.ResponseData = true;
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
+    private string GetAskDetail(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            Dictionary<string, string> dicResult = new Dictionary<string, string>();
+            string askSeq = formData[0];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
+
+            response.IsSucess = true;
+            response.Message = "";
+            DataSet ds = dbAccess.SpDBAccess("maqna.AskDetail_Select", param);
+            response.ResponseData = AskDetail.ConvertList(ds);
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
+    private string SetAnswer(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            string askSeq = formData[0];
+            string answer = formData[1];
+            string usersSeq = formData[2];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
+            param.Add(new System.Data.SqlClient.SqlParameter("@Answer", answer));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", usersSeq));
+
+            response.IsSucess = true;
+            response.Message = "";
+            dbAccess.NonQueryDBAccess("maqna.Answer_Insert", param);
             response.ResponseData = true;
         }
         catch (Exception ex)
