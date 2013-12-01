@@ -31,4 +31,52 @@ namespace MAQNA.DAL.ViewClass
             return list;
         }
     }
+
+    public class AskDetail
+    {
+        public string AskSeq { get; set; }
+        public string AskTitle { get; set; }
+        public string AskDoc { get; set; }
+        public string AskCount { get; set; }
+        public string UsersSeq { get; set; }
+        public string UserNickName { get; set; }
+        public List<AnswerList> Answers { get; set; }
+
+        public static List<AskDetail> ConvertList(DataSet ds)
+        {
+            List<AskDetail> list = new List<AskDetail>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                AskDetail data = new AskDetail();
+                data.AskSeq = row["AskSeq"].ToString();
+                data.UsersSeq = row["UsersSeq"].ToString();
+                data.AskTitle = row["AskTitle"].ToString();
+                data.AskDoc = row["AskDoc"].ToString();
+                data.AskCount = row["AskCount"].ToString();
+                data.UserNickName = row["UserNickName"].ToString();
+                data.Answers = new List<AnswerList>();
+                foreach (DataRow row1 in ds.Tables[1].Rows)
+                {
+                    AnswerList data1 = new AnswerList();
+                    data1.AnswerKey = row1["AnswerKey"].ToString();
+                    data1.Answer = row1["Answer"].ToString();
+                    data1.UsersSeq = row1["UsersSeq"].ToString();
+                    data1.UserNickName = row1["UserNickName"].ToString();
+                    data.Answers.Add(data1);
+                }
+
+                list.Add(data);
+            }
+
+            return list;
+        }
+
+        public class AnswerList
+        {
+            public string AnswerKey { get; set; }
+            public string Answer { get; set; }
+            public string UsersSeq { get; set; }
+            public string UserNickName { get; set; }
+        }
+    }
 }
