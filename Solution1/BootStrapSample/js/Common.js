@@ -6,7 +6,14 @@ name : 호출할 메서드 이름
 callBack : Ajax통신 성공후 콜백 메서드,
 data : Insert, Update, 
 */
-
+/*
+        UserInfo session key
+        LoginKey
+        UserId
+        Nick
+        Local
+        Doc
+*/
 $(document).ready(function () {
     var loginTab = $("ul.nav.pull-right > li:eq(3)");
     var RegTab = $("ul.nav.pull-right > li:eq(4)");
