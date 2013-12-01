@@ -48,7 +48,9 @@
     <Compile Include="JsonResponse.cs" />
     <Compile Include="Sample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewClass\Login.cs" />
     <Compile Include="ViewClass\QNA.cs" />
+    <Compile Include="ViewClass\Reg.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MAQNA.Data\MAQNA.Data.csproj">
