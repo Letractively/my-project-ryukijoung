@@ -44,7 +44,7 @@
                                 <li>
                                     <a href="../QNA/Answer.aspx">질문</a></li>
                                 <li>
-                                    <a href="../Tag/Tach.aspx">태그</a></li>
+                                    <a href="../Tag/TagView.aspx">태그</a></li>
                                 <li>
                                     <a href="../Learn/View.aspx">강좌</a></li>
                                 <li>
