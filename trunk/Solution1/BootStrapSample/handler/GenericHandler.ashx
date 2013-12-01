@@ -50,11 +50,11 @@ public class GenericHandler : IHttpHandler
                 case "SetDBDataSet":
                     context.Response.Write(SetDBDataSet(context.Request.Form));
                     break;
-                case "Ask_List_Select":
-                    context.Response.Write(AskListSelect(context.Request.Form));
+                case "GetAskList":
+                    context.Response.Write(GetAskList(context.Request.Form));
                     break;
-                case "Ask_Insert":
-                    context.Response.Write(AskInsert(context.Request.Form));
+                case "SetAsk":
+                    context.Response.Write(SetAsk(context.Request.Form));
                     break;
                 case "UserReg":
                     parameter = new Dictionary<string, string>();
@@ -248,7 +248,7 @@ public class GenericHandler : IHttpHandler
         return jSerializer.Serialize(response);
     }
 
-    private string AskListSelect(NameValueCollection formData)
+    private string GetAskList(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
         JavaScriptSerializer jSerializer = new JavaScriptSerializer();
@@ -265,7 +265,7 @@ public class GenericHandler : IHttpHandler
 
             response.IsSucess = true;
             response.Message = "";
-            DataSet ds = dbAccess.SpDBAccess("maqna.Ask_List_Select", param);
+            DataSet ds = dbAccess.SpDBAccess("maqna.AskList_Select", param);
             response.ResponseData = AskList.ConvertList(ds);
         }
         catch (Exception ex)
@@ -277,7 +277,7 @@ public class GenericHandler : IHttpHandler
         return jSerializer.Serialize(response);
     }
 
-    private string AskInsert(NameValueCollection formData)
+    private string SetAsk(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
         JavaScriptSerializer jSerializer = new JavaScriptSerializer();
