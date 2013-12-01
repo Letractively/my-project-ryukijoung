@@ -81,15 +81,16 @@
                         <input id="Button1" type="button" value="기술" /><input id="Button2" type="button" value="강좌" /><input id="Button3" type="button" value="기타" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input id="Button4" type="button" value="새로운 태그" /></div>
                     <!-- /doc-index-block -->
-
+                                    태그네임 : X 숫자(질문 갯수)<br />
+                태그제목 : -----<br />
+                선호 하는 태그 로 등록한 사람 태그 팔로워 X 숫자(가져오기
+                <br />
+                <br />
+                페이징 처리</div>
                     <!-- shadow doc-content-box -->
                 </div>
                 <!--/.doc-content-box -->
-                태그네임 : X 숫자(질문 갯수)<br />
-                태그제목 : -----<br />
-                선호 하는 태그 로 등록한 사람 태그 팔로워 X 숫자(가져오기 힘들때 따른것으로 변경할수 있음)<br />
-                <br />
-                페이징 처리</div>
+
             <!--/.span9 -->
         </div>
         <!--/.row-fluid -->
