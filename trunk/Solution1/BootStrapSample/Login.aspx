@@ -26,7 +26,12 @@
     <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
         <![endif]-->
-
+    <!-- javascript
+        ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Common.js"></script>
+    <script src="js/Login.js"></script>
 </head>
 
 <body>
@@ -79,13 +84,14 @@
 
             <div class="span9">
                 <div class="doc-content-box">
-                    <div><a href="">facebook</a></div>
+                    <div><a href="#">facebook</a></div>
                     <div><a href="#">twitter</a></div>
                     <div><a href="#">google</a></div>
                     <div><a id="maqna" href="javascript:void(0)">maqna</a>
-                        <div id="LoginControls" style="display:none;">아이디 : <input type="text"><br/>
-                            비밀번호 : <input type="text"><br/>
-                            <input type="button" value="확인">
+                        <div id="LoginControls" style="display:none;">
+                            아이디 : <input id="UserID" type="text"><br/>
+                            비밀번호 : <input id="UserPwd" type="password"><br/>
+                            <input type="button" value="확인" id="btnLogin">
                         </div>
                     </div>
                 </div>
@@ -107,13 +113,5 @@
         </div>
     </footer>
     <!--/.footer -->
-
-
-    <!-- javascript
-        ================================================== -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Common.js"></script>
-    <script src="js/Login.js"></script>
 </body>
 </html>
