@@ -93,7 +93,7 @@ function GetDataCallBack(data) {
 
     if (data.Sucess != undefined) {
         if (data.Sucess == "1") {
-            location.href = "Default.aspx";
+            location.href = "../Default.aspx";
         }
         else {
             alert("회원가입이 되지 않았습니다.");

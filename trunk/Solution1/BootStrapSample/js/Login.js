@@ -42,7 +42,7 @@ function GetDataCallBack(data) {
         window.sessionStorage.setItem("LoginKey", data.Seq);
         window.sessionStorage.setItem("UserId", data.UserId);
         window.sessionStorage.setItem("Nick", data.UserNickName);
-        location.href = "Default.aspx";
+        location.href = "../Default.aspx";
     }
     else {
         alert("아이디 & 비밀번호를 확인해주세요.!");
