@@ -34,6 +34,17 @@
     <script src="../js/ckeditor.js"></script>
     <script src="../js/Common.js"></script>
     <script src="../js/Qna.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
+            });
+
+            GetAskDetail();
+        });
+        </script>
 </head>
 
 <body>
@@ -82,11 +93,14 @@
             </div>
             <!--/.span3 -->
             <div class="span9">
-                <label id="lblAskTitle">제목</label><input type="text" id="txtAskTitle"/>
-                <textarea class="ckeditor" name="editor1"></textarea>
-                <br />
-                <input onclick="SetAsk();" type="button" value="확인" />
-                <div id="editorcontents"></div>
+                <div id="divAskDetail">
+                    <div id="divAskDetailTitle"></div>
+                    <div id="divAskDetailDoc"></div>
+                </div>
+                <div id="divAnswer"></div>
+                <h2>답변하기</h2>
+                <textarea class="ckeditor" name="answerEditor"></textarea><br />
+                <input onclick="SetAnswer();" type="button" value="저장" />
             </div>
         </div>
         <!--/.row-fluid -->
