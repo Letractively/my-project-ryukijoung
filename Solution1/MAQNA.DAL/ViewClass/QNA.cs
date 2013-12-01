@@ -8,11 +8,11 @@ namespace MAQNA.DAL.ViewClass
 {
     public class AskList
     {
-        private string AskSeq { get; set; }
-        private string UsersSeq { get; set; }
-        private string AskTitle { get; set; }
-        private string AskCount { get; set; }
-        private string UserNickName { get; set; }
+        public string AskSeq { get; set; }
+        public string UsersSeq { get; set; }
+        public string AskTitle { get; set; }
+        public string AskCount { get; set; }
+        public string UserNickName { get; set; }
 
         public static List<AskList> ConvertList(DataSet ds)
         {
