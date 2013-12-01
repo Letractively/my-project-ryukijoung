@@ -35,5 +35,6 @@ function SetAsk() {
 }
 
 function SetAskCallBack(data) {
-    alert("정상적으로 저장되었습니다.");
+    alert('정상적으로 저장되었습니다.');
+    window.location = 'Ask.aspx';
 }

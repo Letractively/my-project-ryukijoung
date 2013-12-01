@@ -51,9 +51,9 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="active">
-                                <a href="Answer.aspx">질문</a></li>
+                                <a href="Ask.aspx">질문</a></li>
                             <li>
-                                <a href="../Tag/Tach.aspx">태그</a></li>
+                                <a href="../Tag/TagView.aspx">태그</a></li>
                             <li>
                                 <a href="../Learn/View.aspx">강좌</a></li>
                             <li>
@@ -85,7 +85,7 @@
                 <label id="lblAskTitle">제목</label><input type="text" id="txtAskTitle"/>
                 <textarea class="ckeditor" name="editor1"></textarea>
                 <br />
-                <input onclick="SetAsk();" type="button" value="확인" />
+                <input onclick="SetAsk();" type="button" value="저장" />
                 <div id="editorcontents"></div>
             </div>
         </div>
