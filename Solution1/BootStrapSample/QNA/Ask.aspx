@@ -44,7 +44,7 @@
 
             GetAskList();
         });
-        </script>
+    </script>
 </head>
 
 <body>
@@ -93,9 +93,11 @@
             </div>
             <!--/.span3 -->
             <div class="span9">
-                <input type="text" id="txtAskSearchText"/>
-                <input onclick="GetAskList();" type="button" value="조회" />
-                <div id="divAskList"></div>
+                <div class="doc-content-box">
+                    <input type="text" id="txtAskSearchText" />
+                    <input onclick="GetAskList();" type="button" value="조회" />
+                    <div id="divAskList"></div>
+                </div>
             </div>
         </div>
         <!--/.row-fluid -->

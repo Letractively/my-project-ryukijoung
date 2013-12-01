@@ -88,6 +88,36 @@ public class DBAccess
         return result;
     }
 
+    public object ScalarDBAccess(String spname, List<SqlParameter> parameter)
+    {
+        object result;
+
+        using (SqlConnection con = new SqlConnection(connectionString))
+        {
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = spname;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddRange(parameter.ToArray());
+
+                result = command.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        return result;
+    }
+
     public DataSet SpDBAccess(String spName, List<SqlParameter> parameter)
     {
         DataSet ds = new DataSet(); //반환받을 데이터 셋 입니다.
