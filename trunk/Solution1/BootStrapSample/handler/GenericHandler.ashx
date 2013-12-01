@@ -31,7 +31,8 @@ public class GenericHandler : IHttpHandler
         {
             string spName = string.Empty;
             spName = context.Request.Params["name"].ToString();
-
+			Dictionary<string, string> parameter = null;
+				
             switch (spName)
             {
                 case "GetDBDataSet":
@@ -40,10 +41,10 @@ public class GenericHandler : IHttpHandler
                 case "SetDBUpdate":
                     context.Response.Write(SetDBUpdate(context));
                     break;
-                case "IdDup_Select":
+                case "IdDup":
                     if (context.Request.Params["UserId"] != null)
                     {
-                        context.Response.Write(SelectIdDup(spName, context.Request.Params["UserId"].ToString()));
+                        context.Response.Write(SelectIdDup("IdDup_Select", context.Request.Params["UserId"].ToString()));
                     }
                     break;
                 case "SetDBDataSet":
@@ -55,18 +56,69 @@ public class GenericHandler : IHttpHandler
                 case "Ask_Insert":
                     context.Response.Write(AskInsert(context.Request.Form));
                     break;
-                case "User_Insert":
-                    Dictionary<string, string> parameter = new Dictionary<string, string>();
+                case "UserReg":
+                    parameter = new Dictionary<string, string>();
                     if (context.Request.Params["UserId"] != null && context.Request.Params["NickName"] != null && context.Request.Params["PassWd"] != null)
                     {
                         parameter.Add("UserId", context.Request.Params["UserId"].ToString());
                         parameter.Add("NickName", context.Request.Params["NickName"].ToString());
                         parameter.Add("PassWd", context.Request.Params["PassWd"].ToString());
-                        context.Response.Write(InsertUser(spName, parameter));
+                        context.Response.Write(InsertUser("User_Insert", parameter));
+                    }
+                    break;
+				case "Login" :
+                    parameter = new Dictionary<string, string>();
+                    if (context.Request.Params["UserId"] != null && context.Request.Params["PassWd"] != null)
+                    {
+                        parameter.Add("UserId", context.Request.Params["UserId"].ToString());
+                        parameter.Add("PassWd", context.Request.Params["PassWd"].ToString());
+                        context.Response.Write(Login("Login_Select", parameter));
                     }
                     break;
             }
         }
+    }
+
+	private string Login(string spname, Dictionary<string, string> parameter)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+
+        try
+        {
+            UserInfo user = new UserInfo();
+            DataSet ds = null;
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@UserId", parameter["UserId"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UserPW", parameter["PassWd"]));
+
+            response.IsSucess = true;
+            response.Message = "";
+            ds = dbAccess.SpDBAccess(spname, param);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                user.Seq = ds.Tables[0].Rows[0]["UsersSeq"].ToString();
+                user.UserId = ds.Tables[0].Rows[0]["UserId"].ToString();
+                user.UserNick = ds.Tables[0].Rows[0]["UserNickName"].ToString();
+            }
+            response.ResponseData = user;
+
+            return jSerializer.Serialize(response);
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            return jSerializer.Serialize(response);
+        }
+    }
+
+    private class UserInfo
+    {
+        public string Seq { get; set; }
+        public string UserId { get; set; }
+        public string UserNick { get; set; }
     }
 
     private class UserInsert
