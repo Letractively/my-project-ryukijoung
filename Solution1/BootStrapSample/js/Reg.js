@@ -34,7 +34,7 @@ $(document).ready(function () {
             }
             else {
                 var parameter = "&UserId=" + id.val();
-                GetData("IdDup_Select", parameter);
+                GetData("IdDup", parameter);
             }
         }
     });
@@ -67,7 +67,7 @@ $(document).ready(function () {
         parameter += "&NickName=" + nick.val();
         parameter += "&PassWd=" + pwd.val();
 
-        GetData("User_Insert", parameter);
+        GetData("UserReg", parameter);
     });
 });
 
