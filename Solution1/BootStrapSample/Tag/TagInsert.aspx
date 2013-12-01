@@ -66,7 +66,7 @@
                     <!--sidebar -->
                     <ul class="nav nav-tabs nav-stacked">
                         <li><a href="TagView.aspx"><i class="icon-chevron-right pull-right"></i> 태그보기</a></li>
-                        <li><a href="Etc.aspx"><i class="icon-chevron-right pull-right"></i> 태그등록</a></li>        
+                        <li><a href="TagInsert.aspx"><i class="icon-chevron-right pull-right"></i> 태그등록</a></li>        
                     </ul><!--/.sidebar -->
                 </div><!--/.span3 -->
 
