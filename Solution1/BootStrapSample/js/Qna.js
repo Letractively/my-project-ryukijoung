@@ -6,15 +6,17 @@ function GetAskList() {
 
     var searchType = '';
     var searchText = document.getElementById('txtAskSearchText').value;
-   
+
     var data = { "searchType": searchType, "searchText": searchText };
-    DoAjaxCall('Ask_List_Select', '', 'GetAskCallBack', data);
+    DoAjaxCall('GetAskList', '', 'GetAskListCallBack', data);
 }
 
-function GetAskCallBack(data) {
+function GetAskListCallBack(data) {
     var str = "<table border='1' style='width:500px;'>"
+    str += "<th>사용자</th><th>제목</th><th>조회수</th>"
     for (var i = 0; i < data.length; i++) {
-        str += "<tr><td>" + data[i].UserNickName + "</td>";
+        str += "<tr>";
+        str += "<td>" + data[i].UserNickName + "</td>";
         str += "<td>" + data[i].AskTitle + "</td>";
         str += "<td>" + data[i].AskCount + "</td></tr>";
     }
@@ -28,8 +30,8 @@ function SetAsk() {
     var userSeq = '1'
     var title = document.getElementById('txtAskTitle').value;
     var ask = htmlEscape(CKEDITOR.instances.editor1.getData());
-    var data = { 'userSeq':userSeq, 'title': title, 'ask': ask };
-    DoAjaxCall('Ask_Insert', '', 'SetAskCallBack', data);
+    var data = { 'userSeq': userSeq, 'title': title, 'ask': ask };
+    DoAjaxCall('SetAsk', '', 'SetAskCallBack', data);
 }
 
 function SetAskCallBack(data) {
