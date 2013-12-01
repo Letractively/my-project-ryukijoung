@@ -8,13 +8,13 @@ data : Insert, Update,
 */
 
 $(document).ready(function () {
-    var loginTab = $("ul.nav > li:eq(3)");
-    var RegTab = $("ul.nav > li:eq(4)");
-    var logoutTab = $("ul.nav > li:eq(5)");
+    var loginTab = $("ul.nav.pull-right > li:eq(3)");
+    var RegTab = $("ul.nav.pull-right > li:eq(4)");
+    var logoutTab = $("ul.nav.pull-right > li:eq(5)");
     if (window.sessionStorage["LoginKey"]) {
         loginTab.hide();
         RegTab.hide();
-        $("ul").append("<li id='RTab'><a href='#'>로그아웃</a></li>");
+        $("ul.nav.pull-right").append("<li id='RTab'><a href='#'>로그아웃</a></li>");
         //$("ul").appendTo("<li><a id='LOTab' href='#'>로그아웃</a></li>");
         //$("<li><a id='LOTab' href='#'>로그아웃</a></li>").replaceWith("ul#LGTab");
     }
