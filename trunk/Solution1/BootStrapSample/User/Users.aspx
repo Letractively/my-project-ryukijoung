@@ -26,9 +26,9 @@
         <![endif]-->
         <!-- javascript
         ================================================== -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/Common.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/Common.js"></script>
         <script type="text/javascript">
             //jQuery(document).ready(function ($) {
 
