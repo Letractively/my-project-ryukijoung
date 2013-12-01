@@ -62,6 +62,9 @@ public class GenericHandler : IHttpHandler
                 case "SetAnswer":
                     context.Response.Write(SetAnswer(context.Request.Form));
                     break;
+                case "GoodAnswer":
+                    context.Response.Write(GoodAnswer(context.Request.Form));
+                    break;
                 case "UserReg":
                     parameter = new Dictionary<string, string>();
                     if (context.Request.Params["UserId"] != null && context.Request.Params["NickName"] != null && context.Request.Params["PassWd"] != null)
@@ -339,7 +342,7 @@ public class GenericHandler : IHttpHandler
         }
         return jSerializer.Serialize(response);
     }
-
+    
     private string SetAnswer(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
@@ -360,6 +363,36 @@ public class GenericHandler : IHttpHandler
             response.Message = "";
             dbAccess.NonQueryDBAccess("maqna.Answer_Insert", param);
             response.ResponseData = true;
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
+    private string GoodAnswer(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        List<string> retData = new List<string>();
+        try
+        {
+            string answerSeq = formData[0];
+            string usersSeq = formData[1];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AnswerSeq", answerSeq));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", usersSeq));
+
+            response.IsSucess = true;
+            response.Message = "";
+            retData.Add(answerSeq);
+            retData.Add(dbAccess.ScalarDBAccess("maqna.GoodAnswer_Insert", param).ToString());
+            response.ResponseData = retData;
         }
         catch (Exception ex)
         {

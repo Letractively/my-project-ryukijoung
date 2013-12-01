@@ -82,10 +82,12 @@
             </div>
             <!--/.span3 -->
             <div class="span9">
-                <label id="lblAskTitle">제목</label><input type="text" id="txtAskTitle"/>
-                <textarea class="ckeditor" name="askEditor"></textarea>
-                <br />
-                <input onclick="SetAsk();" type="button" value="저장" />
+                <div class="doc-content-box">
+                    <label id="lblAskTitle">제목</label><input type="text" id="txtAskTitle" />
+                    <textarea class="ckeditor" name="askEditor"></textarea>
+                    <br />
+                    <input onclick="SetAsk();" type="button" value="저장" />
+                </div>
             </div>
         </div>
         <!--/.row-fluid -->

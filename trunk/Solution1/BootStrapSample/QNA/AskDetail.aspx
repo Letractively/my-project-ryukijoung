@@ -44,7 +44,7 @@
 
             GetAskDetail();
         });
-        </script>
+    </script>
 </head>
 
 <body>
@@ -79,8 +79,6 @@
         </div>
         <!--/.navbar -->
     </header>
-
-
     <article class="container">
         <div class="row-fluid">
             <div class="span3">
@@ -93,14 +91,16 @@
             </div>
             <!--/.span3 -->
             <div class="span9">
-                <div id="divAskDetail">
+                <div class="doc-content-box">
                     <div id="divAskDetailTitle"></div>
                     <div id="divAskDetailDoc"></div>
                 </div>
                 <div id="divAnswer"></div>
-                <h2>답변하기</h2>
-                <textarea class="ckeditor" name="answerEditor"></textarea><br />
-                <input onclick="SetAnswer();" type="button" value="저장" />
+                <div class="doc-content-box">
+                    <h2>답변하기</h2>
+                    <textarea class="ckeditor" name="answerEditor"></textarea><br />
+                    <input onclick="SetAnswer();" type="button" value="저장" />
+                </div>
             </div>
         </div>
         <!--/.row-fluid -->
