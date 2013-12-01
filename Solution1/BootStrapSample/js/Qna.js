@@ -26,12 +26,13 @@ function GetAskListCallBack(data) {
 }
 
 function SetAsk() {
-    //var userSeq = sessionStorage['UserSeq'];
-    var userSeq = '1'
-    var title = document.getElementById('txtAskTitle').value;
-    var ask = htmlEscape(CKEDITOR.instances.askEditor.getData());
-    var data = { 'userSeq': userSeq, 'title': title, 'ask': ask };
-    DoAjaxCall('SetAsk', '', 'SetAskCallBack', data);
+    if (window.sessionStorage["LoginKey"]) {
+        var userSeq = sessionStorage['LoginKey'];
+        var title = document.getElementById('txtAskTitle').value;
+        var ask = htmlEscape(CKEDITOR.instances.askEditor.getData());
+        var data = { 'userSeq': userSeq, 'title': title, 'ask': ask };
+        DoAjaxCall('SetAsk', '', 'SetAskCallBack', data);
+    }
 }
 
 function SetAskCallBack(data) {
