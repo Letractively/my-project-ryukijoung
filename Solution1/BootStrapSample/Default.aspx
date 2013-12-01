@@ -42,7 +42,7 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right">
                                 <li>
-                                    <a href="QNA/Answer.aspx">질문</a></li>
+                                    <a href="QNA/Ask.aspx">질문</a></li>
                                 <li>
                                     <a href="Tag/TagView.aspx">태그</a></li>
                                 <li>

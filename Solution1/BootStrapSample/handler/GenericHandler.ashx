@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using System.Data;
 using MAQNA.DAL;
+using MAQNA.DAL.ViewClass;
 using Newtonsoft.Json;
 using System.Collections.Specialized;
 
@@ -48,7 +49,10 @@ public class GenericHandler : IHttpHandler
                 case "SetDBDataSet":
                     context.Response.Write(SetDBDataSet(context.Request.Form));
                     break;
-                case "AskInsert":
+                case "Ask_List_Select":
+                    context.Response.Write(AskListSelect(context.Request.Form));
+                    break;
+                case "Ask_Insert":
                     context.Response.Write(AskInsert(context.Request.Form));
                     break;
                 case "User_Insert":
@@ -192,6 +196,35 @@ public class GenericHandler : IHttpHandler
         return jSerializer.Serialize(response);
     }
 
+    private string AskListSelect(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            Dictionary<string, string> dicResult = new Dictionary<string, string>();
+            string searchType = formData[0];
+            string searchText = formData[1];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@SearchText", searchText));
+            param.Add(new System.Data.SqlClient.SqlParameter("@SearchType", searchType));
+
+            response.IsSucess = true;
+            response.Message = "";
+            DataSet ds = dbAccess.SpDBAccess("maqna.Ask_List_Select", param);
+            response.ResponseData = AskList.ConvertList(ds);
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
     private string AskInsert(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
@@ -199,18 +232,18 @@ public class GenericHandler : IHttpHandler
         string jsonData = string.Empty;
         try
         {
-            int userId = 1;  // 세션에서 읽어와야함
-            string title = formData[0];
-            string ask = formData[1];
+            string userSeq = formData[0];
+            string title = formData[1];
+            string ask = formData[2];
 
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
-            param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", userId));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", userSeq));
             param.Add(new System.Data.SqlClient.SqlParameter("@AskTitle", title));
             param.Add(new System.Data.SqlClient.SqlParameter("@AskDoc", ask));
 
             response.IsSucess = true;
             response.Message = "";
-            DataSet ds = dbAccess.SpDBAccess("maqna.Ask_Insert", param);
+            dbAccess.NonQueryDBAccess("maqna.Ask_Insert", param);
             response.ResponseData = true;
         }
         catch (Exception ex)
@@ -218,7 +251,6 @@ public class GenericHandler : IHttpHandler
             response.Message = ex.Message;
             response.IsSucess = false;
             response.ResponseData = false;
-
         }
         return jSerializer.Serialize(response);
     }
