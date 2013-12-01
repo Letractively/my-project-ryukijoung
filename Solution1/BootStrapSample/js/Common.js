@@ -25,7 +25,7 @@ $(document).ready(function () {
     }
     $("#RTab").click(function () {
         window.sessionStorage.clear();
-        location.href = "Default.aspx";
+        location.href = "../Default.aspx";
     });
     //GetData();
 });
