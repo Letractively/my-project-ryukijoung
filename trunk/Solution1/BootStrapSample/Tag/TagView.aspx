@@ -79,12 +79,13 @@
                     <div class="doc-index-block">
                         <!-- /index-item -->
                         <input id="Button1" type="button" value="기술" /><input id="Button2" type="button" value="강좌" /><input id="Button3" type="button" value="기타" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input id="Button4" type="button" value="새로운 태그" /></div>
+                        <input id="Button4" type="button" value="새로운 태그" />&nbsp;&nbsp;&nbsp; tagName :
+                        <input id="Text1" type="text" />
+                        <input id="Button5" type="button" value="검색" /></div>
                     <!-- /doc-index-block -->
                                     태그네임 : X 숫자(질문 갯수)<br />
                 태그제목 : -----<br />
-                선호 하는 태그 로 등록한 사람 태그 팔로워 X 숫자(가져오기
-                <br />
+                    사용자별 답변 갯수<br />
                 <br />
                 페이징 처리</div>
                     <!-- shadow doc-content-box -->
