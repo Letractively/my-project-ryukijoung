@@ -87,7 +87,7 @@ public class GenericHandler : IHttpHandler
 
         try
         {
-            UserInfo user = new UserInfo();
+            Login user = new Login();
             DataSet ds = null;
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@UserId", parameter["UserId"]));
@@ -114,18 +114,6 @@ public class GenericHandler : IHttpHandler
         }
     }
 
-    private class UserInfo
-    {
-        public string Seq { get; set; }
-        public string UserId { get; set; }
-        public string UserNick { get; set; }
-    }
-
-    private class UserInsert
-    {
-        public int Sucess { get; set; }
-    }
-
     private string InsertUser(string spname, Dictionary<string, string> parameter)
     {
         JsonResponse response = new JsonResponse();
@@ -134,7 +122,7 @@ public class GenericHandler : IHttpHandler
 
         try
         {
-            UserInsert user = new UserInsert();
+            Reg user = new Reg();
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@UserId", parameter["UserId"]));
             param.Add(new System.Data.SqlClient.SqlParameter("@NickName", parameter["NickName"]));
