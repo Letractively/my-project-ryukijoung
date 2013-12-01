@@ -6,6 +6,30 @@ name : 호출할 메서드 이름
 callBack : Ajax통신 성공후 콜백 메서드,
 data : Insert, Update, 
 */
+
+$(document).ready(function () {
+    var loginTab = $("ul.nav > li:eq(3)");
+    var RegTab = $("ul.nav > li:eq(4)");
+    var logoutTab = $("ul.nav > li:eq(5)");
+    if (window.sessionStorage["LoginKey"]) {
+        loginTab.hide();
+        RegTab.hide();
+        $("ul").append("<li id='RTab'><a href='#'>로그아웃</a></li>");
+        //$("ul").appendTo("<li><a id='LOTab' href='#'>로그아웃</a></li>");
+        //$("<li><a id='LOTab' href='#'>로그아웃</a></li>").replaceWith("ul#LGTab");
+    }
+    else {
+        loginTab.show();
+        RegTab.show();
+        logoutTab.remove();
+    }
+    $("#RTab").click(function () {
+        window.sessionStorage.clear();
+        location.href = "Default.aspx";
+    });
+    //GetData();
+});
+
 function DoAjaxCall(name, parameter, callBack, data) {
     $.ajax({
         type: "POST",
