@@ -37,6 +37,14 @@ $(document).ready(function () {
     //GetData();
 });
 
+function IsLogin() {
+    if (window.sessionStorage["LoginKey"]) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 function DoAjaxCall(name, parameter, callBack, data) {
     $.ajax({
         type: "POST",
