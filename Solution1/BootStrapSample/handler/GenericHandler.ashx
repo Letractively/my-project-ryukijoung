@@ -118,7 +118,7 @@ public class GenericHandler : IHttpHandler
             int result = -1;
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@TagNm", parameter["TagNm"]));
-            param.Add(new System.Data.SqlClient.SqlParameter("@UserNm", parameter["UserNm"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UserSeq", parameter["UserNm"]));
             param.Add(new System.Data.SqlClient.SqlParameter("@Gubn", parameter["Gubn"]));
             param.Add(new System.Data.SqlClient.SqlParameter("@SimpleDec", parameter["SimpleDec"]));
             param.Add(new System.Data.SqlClient.SqlParameter("@TagDec", parameter["TagDec"]));
