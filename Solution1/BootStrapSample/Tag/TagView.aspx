@@ -25,7 +25,15 @@
     <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
         <![endif]-->
-
+    <!-- javascript
+        ================================================== -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Common.js"></script>
+    <script src="../js/Tag.js"></script>
+    <script type="text/javascript">
+        GetTagList();
+    </script>
 </head>
 
 <body>
@@ -78,25 +86,32 @@
                 <div class="doc-content-box">
                     <div class="doc-index-block">
                         <!-- /index-item -->
-                        <input id="Button1" type="button" value="기술" /><input id="Button2" type="button" value="강좌" /><input id="Button3" type="button" value="기타" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input id="Button4" type="button" value="새로운 태그" />&nbsp;&nbsp;&nbsp; tagName :
-                        <input id="Text1" type="text" />
-                        <input id="Button5" type="button" value="검색" /></div>
-                    <!-- /doc-index-block -->
-                                    태그네임 : X 숫자(질문 갯수)<br />
-                태그제목 : -----<br />
-                    사용자별 답변 갯수<br />
-                <br />
-                페이징 처리</div>
-                    <!-- shadow doc-content-box -->
+                        <input id="btnTach" type="button" value="기술" />
+                        <input id="btnLean" type="button" value="강좌" />
+                        <input id="btnEtc" type="button" value="기타" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="btnNewTag" type="button" value="새로운 태그" />&nbsp;&nbsp;&nbsp; 
+                        tagName :
+                        <input id="txtTagNm" type="text" />
+                        <input id="btnSearch" type="button" value="검색" />
+                    </div>
+                    <div id="">
+                        태그네임 : X 숫자(질문 갯수)<br />
+                        태그제목 : -----<br />
+                        사용자별 답변 갯수<br />
+                    </div>
+                    <br />
+                    <div id="page"></div>
                 </div>
-                <!--/.doc-content-box -->
+                <!-- shadow doc-content-box -->
+            </div>
+            <!--/.doc-content-box -->
 
             <!--/.span9 -->
         </div>
         <!--/.row-fluid -->
 
-       
+
     </article>
     <!-- /container -->
 
@@ -110,22 +125,5 @@
         </div>
     </footer>
     <!--/.footer -->
-
-
-    <!-- javascript
-        ================================================== -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/Common.js"></script>
-    <script type="text/javascript">
-        //jQuery(document).ready(function ($) {
-        //    $(".scroll").click(function (event) {
-        //        event.preventDefault();
-        //        $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
-        //    });
-
-        //});
-
-    </script>
 </body>
 </html>
