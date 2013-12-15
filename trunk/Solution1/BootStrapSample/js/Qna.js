@@ -1,9 +1,5 @@
-﻿/// <reference path="../QNA/AskReg.aspx" />
-/// <reference path="../QNA/AskReg.aspx" />
-/// <reference path="../QNA/AskReg.aspx" />
-//function GetContents() {
-//    document.getElementById('editorcontents').innerHTML = CKEDITOR.instances.askEditor.getData();
-//}
+﻿
+///////////////////////////////////////////////////////////////////////////////////////
 
 // 질문목록 조회
 function GetAskList() {
@@ -36,6 +32,8 @@ function GetAskListCallBack(data) {
     }
     $("#divAskList").html(str);
 }
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 // 좋은질문
 function GoodAsk(seq) {
@@ -147,6 +145,8 @@ function GetAskDetailCallBack(data) {
         document.getElementById('divAnswer').innerHTML = htmlUnescape(strAnswer);
 }
 
+///////////////////////////////////////////////////////////////////////////////////////
+
 // 좋은답변
 function GoodAnswer(seq) {
     if (window.sessionStorage['LoginKey']) {
@@ -172,6 +172,8 @@ function GoodAnswerCallBack(data) {
     }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////
+
 // 답변하기
 function SetAnswer() {
     if (window.sessionStorage['LoginKey']) {
@@ -194,6 +196,8 @@ function SetAnswerCallBack(data) {
     document.location = document.location;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////
+
 // 질문수정
 function AskUpdate() {
     if (window.sessionStorage['LoginKey']) {
@@ -211,9 +215,11 @@ function AskUpdate() {
 // 질문삭제
 function AskDelete() {
     if (window.sessionStorage['LoginKey']) {
-        var askSeq = document.getElementById('hidAskSeq').value;
-        var data = { 'askSeq': askSeq };
-        DoAjaxCall('AskDelete', '', 'AskDeleteCallBack', data);
+        if (confirm("정말 삭제하시겠습니까?") == true) {
+            var askSeq = document.getElementById('hidAskSeq').value;
+            var data = { 'askSeq': askSeq };
+            DoAjaxCall('AskDelete', '', 'AskDeleteCallBack', data);
+        }
     }
     else {
         // 로그인 페이지로 이동 -> 로그인후에 다시 돌아와야함
