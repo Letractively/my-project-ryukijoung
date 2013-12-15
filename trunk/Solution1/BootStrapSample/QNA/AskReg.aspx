@@ -35,6 +35,10 @@
     <script src="../js/Common.js"></script>
     <script src="../js/Qna.js"></script>
     <script type="text/javascript">
+        if (!IsLogin()) {
+            location.href = '../Login.aspx';
+        }
+
         jQuery(document).ready(function ($) {
 
             $(".scroll").click(function (event) {

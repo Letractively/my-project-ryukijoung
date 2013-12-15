@@ -99,7 +99,7 @@
                 <div id="divAnswer"></div>
                 <div class="doc-content-box">
                     <h2>답변하기</h2>
-                    <textarea class="ckeditor" name="answerEditor"></textarea><br />
+                    <div id="editor"><textarea class="ckeditor" name="answerEditor"></textarea></div><br />
                     <input onclick="SetAnswer();" type="button" value="저장" />
                 </div>
             </div>
