@@ -20,7 +20,7 @@ public class GenericHandler : IHttpHandler
 
     /// <summary>
     /// Common에서 요청된 HttpContext내용을 처리 합니다.
-    /// </summary>
+    /// </summary>\ 
     /// <param name="context"></param>
     public void ProcessRequest(HttpContext context)
     {
@@ -93,7 +93,49 @@ public class GenericHandler : IHttpHandler
                         context.Response.Write(Login("Login_Select", parameter));
                     }
                     break;
+                case "SetTag":
+                    parameter = new Dictionary<string, string>();
+                    parameter.Add("TagNm", context.Request.Params["TagName"].ToString());
+                    parameter.Add("UserNm", context.Request.Params["Nick"].ToString());
+                    parameter.Add("Gubn", context.Request.Params["TagGubn"].ToString());
+                    parameter.Add("SimpleDec", context.Request.Params["sample"].ToString());
+                    parameter.Add("TagDec", context.Request.Params["TagDec"].ToString());
+                    context.Response.Write(TagReg("Tag_Insert", parameter));
+                    break;
             }
+        }
+    }
+
+    private string TagReg(string spname, Dictionary<string, string> parameter)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        
+        try
+        {
+            UserInfo user = new UserInfo();
+            int result = -1;
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@TagNm", parameter["TagNm"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UserNm", parameter["UserNm"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@Gubn", parameter["Gubn"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@SimpleDec", parameter["SimpleDec"]));
+            param.Add(new System.Data.SqlClient.SqlParameter("@TagDec", parameter["TagDec"]));
+
+            response.IsSucess = true;
+            response.Message = "";
+            result = dbAccess.NonQueryDBAccess(spname, param);
+
+            response.ResponseData = result;
+
+            return jSerializer.Serialize(response);
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            return jSerializer.Serialize(response);
         }
     }
 
