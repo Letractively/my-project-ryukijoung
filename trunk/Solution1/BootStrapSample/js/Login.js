@@ -41,7 +41,7 @@ function GetDataCallBack(data) {
      if (!window.sessionStorage["LoginKey"] && data.Seq != null) {
         window.sessionStorage.setItem("LoginKey", data.Seq);
         window.sessionStorage.setItem("UserId", data.UserId);
-        window.sessionStorage.setItem("Nick", data.UserNickName);
+        window.sessionStorage.setItem("Nick", data.UserNick);
         location.href = "../Default.aspx";
     }
     else {

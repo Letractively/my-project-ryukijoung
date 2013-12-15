@@ -9,7 +9,7 @@ function GetTagListCallBack(data) {
 
 function SetTagItem() {
     var tagNm = $("#TagNm");
-    var userNm = window.sessionStorage.getItem("Nick");
+    var userNm = window.sessionStorage.getItem("LoginKey");
     var gubn = $("#TagGubn").val();
     var simpleDec = htmlEscape(CKEDITOR.instances.SimpleEditor.getData());
     var TagDec = htmlEscape(CKEDITOR.instances.TagDecEditor.getData());
