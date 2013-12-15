@@ -26,6 +26,25 @@
           <script src="js/html5shiv.js"></script>
         <![endif]-->
         
+        <!-- javascript
+        ================================================== -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/ckeditor.js"></script>
+        <script src="../js/Common.js"></script>
+        <script src="../js/Tag.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                if (!window.sessionStorage.getItem("Nick")) {
+                    location.href = '../Login.aspx';
+                    return;
+                }
+                $("#ok").click(function () {
+                    SetTagItem();
+                });
+            });
+
+        </script>
     </head>
 
     <body>
@@ -73,9 +92,19 @@
                 <div class="span9">
                     <div class="doc-content-box">
                         <div class="doc-index-block">
-                            <!-- /index-item -->
+                            태그명 : <input type="text" id="TagNm" /><br/>
+                            태그 구분 : <select id="TagGubn">
+                                            <option value="">선택</option>
+                                            <option value="T">기술</option>
+                                            <option value="L">강과</option>
+                                            <option value="N">기타</option>
+                                        </select><br/>
+                            태그 간이설명 : 
+                            <textarea class="ckeditor" name="SimpleEditor"></textarea><br />
+                            태그 설명 : 
+                            <textarea class="ckeditor" name="TagDecEditor"></textarea><br />
                         </div><!-- /doc-index-block -->
-                        
+                        <input type="button" id="ok" value="태그 추가"/>
                         <!-- shadow doc-content-box -->
                     </div><!--/.doc-content-box -->
                 </div><!--/.span9 -->
@@ -91,22 +120,5 @@
                 </div>
             </div>
         </footer><!--/.footer -->
-
-        
-        <!-- javascript
-        ================================================== -->
-        <script src="../js/jquery.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/Common.js"></script>
-        <script type="text/javascript">
-            //jQuery(document).ready(function ($) {
-            //    $(".scroll").click(function (event) {
-            //        event.preventDefault();
-            //        $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
-            //    });
-
-            //});
-
-        </script>
     </body>
 </html>
