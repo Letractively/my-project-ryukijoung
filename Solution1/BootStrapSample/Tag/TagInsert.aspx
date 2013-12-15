@@ -35,10 +35,11 @@
         <script src="../js/Tag.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
-                if (!window.sessionStorage.getItem("Nick")) {
+                if (!IsLogin()) {
                     location.href = '../Login.aspx';
                     return;
                 }
+
                 $("#ok").click(function () {
                     SetTagItem();
                 });
