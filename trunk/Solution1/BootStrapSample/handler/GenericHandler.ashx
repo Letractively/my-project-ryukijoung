@@ -31,8 +31,8 @@ public class GenericHandler : IHttpHandler
         {
             string spName = string.Empty;
             spName = context.Request.Params["name"].ToString();
-			Dictionary<string, string> parameter = null;
-				
+            Dictionary<string, string> parameter = null;
+
             switch (spName)
             {
                 case "GetDBDataSet":
@@ -53,8 +53,17 @@ public class GenericHandler : IHttpHandler
                 case "GetAskList":
                     context.Response.Write(GetAskList(context.Request.Form));
                     break;
+                case "GoodAsk":
+                    context.Response.Write(GoodAsk(context.Request.Form));
+                    break;
                 case "SetAsk":
                     context.Response.Write(SetAsk(context.Request.Form));
+                    break;
+                case "GetRegAskDetail":
+                    context.Response.Write(GetRegAskDetail(context.Request.Form));
+                    break;
+                case "AskDelete": // 질문삭제
+                    context.Response.Write(AskDelete(context.Request.Form));
                     break;
                 case "GetAskDetail":
                     context.Response.Write(GetAskDetail(context.Request.Form));
@@ -75,7 +84,7 @@ public class GenericHandler : IHttpHandler
                         context.Response.Write(InsertUser("User_Insert", parameter));
                     }
                     break;
-				case "Login" :
+                case "Login":
                     parameter = new Dictionary<string, string>();
                     if (context.Request.Params["UserId"] != null && context.Request.Params["PassWd"] != null)
                     {
@@ -88,7 +97,7 @@ public class GenericHandler : IHttpHandler
         }
     }
 
-	private string Login(string spname, Dictionary<string, string> parameter)
+    private string Login(string spname, Dictionary<string, string> parameter)
     {
         JsonResponse response = new JsonResponse();
         JavaScriptSerializer jSerializer = new JavaScriptSerializer();
@@ -286,6 +295,36 @@ public class GenericHandler : IHttpHandler
         return jSerializer.Serialize(response);
     }
 
+    private string GoodAsk(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        List<string> retData = new List<string>();
+        try
+        {
+            string askSeq = formData[0];
+            string usersSeq = formData[1];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
+            param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", usersSeq));
+
+            response.IsSucess = true;
+            response.Message = "";
+            retData.Add(askSeq);
+            retData.Add(dbAccess.ScalarDBAccess("maqna.GoodAsk_Insert", param).ToString());
+            response.ResponseData = retData;
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
     private string SetAsk(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();
@@ -293,11 +332,13 @@ public class GenericHandler : IHttpHandler
         string jsonData = string.Empty;
         try
         {
-            string userSeq = formData[0];
-            string title = formData[1];
-            string ask = formData[2];
+            string askSeq = formData[0];
+            string userSeq = formData[1];
+            string title = formData[2];
+            string ask = formData[3];
 
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
             param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", userSeq));
             param.Add(new System.Data.SqlClient.SqlParameter("@AskTitle", title));
             param.Add(new System.Data.SqlClient.SqlParameter("@AskDoc", ask));
@@ -305,6 +346,60 @@ public class GenericHandler : IHttpHandler
             response.IsSucess = true;
             response.Message = "";
             dbAccess.NonQueryDBAccess("maqna.Ask_Insert", param);
+            response.ResponseData = true;
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
+    private string GetRegAskDetail(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            Dictionary<string, string> dicResult = new Dictionary<string, string>();
+            string askSeq = formData[0];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
+
+            response.IsSucess = true;
+            response.Message = "";
+            DataSet ds = dbAccess.SpDBAccess("maqna.RegAskDetail_Select", param);
+            response.ResponseData = RegAskDetail.ConvertList(ds);
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
+    private string AskDelete(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            Dictionary<string, string> dicResult = new Dictionary<string, string>();
+            string askSeq = formData[0];
+
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
+
+            response.IsSucess = true;
+            response.Message = "";
+            dbAccess.NonQueryDBAccess("maqna.AskDetail_Delete", param);
             response.ResponseData = true;
         }
         catch (Exception ex)
@@ -342,7 +437,7 @@ public class GenericHandler : IHttpHandler
         }
         return jSerializer.Serialize(response);
     }
-    
+
     private string SetAnswer(NameValueCollection formData)
     {
         JsonResponse response = new JsonResponse();

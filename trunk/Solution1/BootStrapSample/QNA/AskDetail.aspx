@@ -92,6 +92,7 @@
             <!--/.span3 -->
             <div class="span9">
                 <div class="doc-content-box">
+                    <div id="divBtn"></div>
                     <div id="divAskDetailTitle"></div>
                     <div id="divAskDetailDoc"></div>
                 </div>

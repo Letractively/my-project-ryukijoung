@@ -87,4 +87,32 @@ namespace MAQNA.DAL.ViewClass
             public string GoodAnswerCount { get; set; }
         }
     }
+
+    public class RegAskDetail
+    {
+        public string AskSeq { get; set; }
+        public string AskTitle { get; set; }
+        public string AskDoc { get; set; }
+        public string AskCount { get; set; }
+        public string UsersSeq { get; set; }
+        public string UserNickName { get; set; }
+
+        public static List<RegAskDetail> ConvertList(DataSet ds)
+        {
+            List<RegAskDetail> list = new List<RegAskDetail>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                RegAskDetail data = new RegAskDetail();
+                data.AskSeq = row["AskSeq"].ToString();
+                data.UsersSeq = row["UsersSeq"].ToString();
+                data.AskTitle = row["AskTitle"].ToString();
+                data.AskDoc = row["AskDoc"].ToString();
+                data.AskCount = row["AskCount"].ToString();
+                data.UserNickName = row["UserNickName"].ToString();
+                list.Add(data);
+            }
+
+            return list;
+        }
+    }
 }

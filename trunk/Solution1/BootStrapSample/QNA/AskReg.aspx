@@ -34,6 +34,17 @@
     <script src="../js/ckeditor.js"></script>
     <script src="../js/Common.js"></script>
     <script src="../js/Qna.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $("html,body").animate({ scrollTop: $(this.hash).offset().top - 50 }, 'slow');
+            });
+
+            GetRegAskDetail();
+        });
+    </script>
 </head>
 
 <body>
@@ -83,7 +94,7 @@
             <!--/.span3 -->
             <div class="span9">
                 <div class="doc-content-box">
-                    <label id="lblAskTitle">제목</label><input type="text" id="txtAskTitle" />
+                    <input type='hidden' id='hidAskSeq' value='0' /><label id="lblAskTitle">제목</label><input type="text" id="txtAskTitle" />
                     <textarea class="ckeditor" name="askEditor"></textarea>
                     <br />
                     <input onclick="SetAsk();" type="button" value="저장" />

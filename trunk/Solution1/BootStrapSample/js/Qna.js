@@ -1,10 +1,12 @@
-﻿//function GetContents() {
+﻿/// <reference path="../QNA/AskReg.aspx" />
+/// <reference path="../QNA/AskReg.aspx" />
+/// <reference path="../QNA/AskReg.aspx" />
+//function GetContents() {
 //    document.getElementById('editorcontents').innerHTML = CKEDITOR.instances.askEditor.getData();
 //}
 
 // 질문목록 조회
 function GetAskList() {
-
     var searchType = '';
     var searchText = document.getElementById('txtAskSearchText').value;
 
@@ -14,21 +16,52 @@ function GetAskList() {
 
 // 질문목록 조회 콜백
 function GetAskListCallBack(data) {
-    var str = "<table border='1' style='width:500px;'>"
-    str += "<th>좋은질문</th><th>사용자</th><th>제목</th><th>조회수</th><th>답변수</th><th>등록일</th>"
-    for (var i = 0; i < data.length; i++) {
-        str += "<tr>";
-        str += "<td>" + data[i].GoodAskCount + "</td>";
-        str += "<td>" + data[i].UserNickName + "</td>";
-        str += "<td><a href='AskDetail.aspx?seq=" + data[i].AskSeq + "'>" + data[i].AskTitle + "</a></td>";
-        str += "<td>" + data[i].AskCount + "</td>";
-        str += "<td>" + data[i].AnswerCount + "</td>";
-        str += "<td>" + data[i].AskRegDate + "</td></tr>";
+    var str
+    if (data.length > 0) {
+        str = "<table border='1' style='width:500px;'>"
+        str += "<th>좋은질문</th><th>사용자</th><th>제목</th><th>조회수</th><th>답변수</th><th>등록일</th>"
+        for (var i = 0; i < data.length; i++) {
+            str += "<tr>";
+            str += "<td><a onclick='GoodAsk(" + data[i].AskSeq + ");'><span id=span" + data[i].AskSeq + ">" + data[i].GoodAskCount + "</span></a></td>";
+            str += "<td>" + data[i].UserNickName + "</td>";
+            str += "<td><a href='AskDetail.aspx?seq=" + data[i].AskSeq + "'>" + data[i].AskTitle + "</a></td>";
+            str += "<td>" + data[i].AskCount + "</td>";
+            str += "<td>" + data[i].AnswerCount + "</td>";
+            str += "<td>" + data[i].AskRegDate + "</td></tr>";
+        }
+        str += "</table>";
     }
-    str += "</table>";
-
+    else {
+        str = "데이터가 하나도 음써욤";
+    }
     $("#divAskList").html(str);
 }
+
+// 좋은질문
+function GoodAsk(seq) {
+    var userSeq;
+    if (window.sessionStorage['LoginKey']) {
+        userSeq = sessionStorage['LoginKey'];
+    }
+    else {
+        userSeq = -1;
+    }
+    var data = { 'seq': seq, 'userSeq': userSeq };
+    DoAjaxCall('GoodAsk', '', 'GoodAskCallBack', data);
+}
+
+// 좋은질문 콜백
+function GoodAskCallBack(data) {
+    if (data[1] == -1) {
+        alert("오늘은 이미 추천하셨습니다.");
+    }
+    else {
+        var ask = document.getElementById('span' + data[0]);
+        ask.textContent = data[1];
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 // 질문하기
 function SetAsk() {
@@ -36,16 +69,46 @@ function SetAsk() {
         var userSeq = sessionStorage['LoginKey'];
         var title = document.getElementById('txtAskTitle').value;
         var ask = htmlEscape(CKEDITOR.instances.askEditor.getData());
-        var data = { 'userSeq': userSeq, 'title': title, 'ask': ask };
+        var askSeq = document.getElementById('hidAskSeq').value;
+        var data = { 'askSeq': askSeq, 'userSeq': userSeq, 'title': title, 'ask': ask };
         DoAjaxCall('SetAsk', '', 'SetAskCallBack', data);
+    }
+    else {
+        // 로그인 페이지로 이동 -> 로그인후에 다시 돌아와야함
+        alert("로그인하세염");
+        document.location = '../Login.aspx';
     }
 }
 
 // 질문하기 콜백
 function SetAskCallBack(data) {
     alert('정상적으로 저장되었습니다.');
-    window.location = 'Ask.aspx';
+    document.location = 'Ask.aspx';
 }
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+// 질문상세수정
+function GetRegAskDetail() {
+    if ($.getUrlVar('seq')) {
+        var seq = $.getUrlVar('seq');
+        document.getElementById('hidAskSeq').value = seq;
+        var data = { 'seq': seq };
+        DoAjaxCall('GetRegAskDetail', '', 'GetRegAskDetailCallBack', data);
+    }
+}
+
+// 질문상세수정 콜백
+function GetRegAskDetailCallBack(data) {
+    //제목
+    $("#txtAskTitle")[0].value = data[0].AskTitle;
+    //document.getElementById('txtAskTitle').value = data[0].AskTitle;
+
+    //상세내용
+    CKEDITOR.instances.askEditor.setData(htmlUnescape(data[0].AskDoc));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 // 질문상세 조회
 function GetAskDetail() {
@@ -56,6 +119,13 @@ function GetAskDetail() {
 
 // 질문상세 콜백
 function GetAskDetailCallBack(data) {
+    //   <input onclick="AskUpdate();" type="button" value="수정" /> <input onclick="    AskDelete();" type="button" value="삭제" />
+    // 버튼
+    if (window.sessionStorage['LoginKey']) {
+        if (sessionStorage['LoginKey'] == data[0].UsersSeq) {
+            $('#divBtn').html("<input onclick='AskUpdate();' type='button' value='수정' /> <input onclick='AskDelete();' type='button' value='삭제' />");
+        }
+    }
     //제목
     var strTitle = "<input type='hidden' id='hidAskSeq' value='" + data[0].AskSeq + "' />";
     strTitle += "<div class='page-header'><h2>" + data[0].AskTitle + "</h2></div>";
@@ -79,35 +149,81 @@ function GetAskDetailCallBack(data) {
 
 // 좋은답변
 function GoodAnswer(seq) {
-    var userSeq;
     if (window.sessionStorage['LoginKey']) {
-        userSeq = sessionStorage['LoginKey'];
+        var userSeq = sessionStorage['LoginKey'];
+        var data = { 'seq': seq, 'userSeq': userSeq };
+        DoAjaxCall('GoodAnswer', '', 'GoodAnswerCallBack', data);
     }
     else {
-        userSeq = -1;
+        // 로그인 페이지로 이동 -> 로그인후에 다시 돌아와야함
+        alert("로그인하세염");
+        document.location = '../Login.aspx';
     }
-    var data = { 'seq': seq, 'userSeq': userSeq };
-    DoAjaxCall('GoodAnswer', '', 'GoodAnswerCallBack', data);
 }
 
 // 좋은답변 콜백
 function GoodAnswerCallBack(data) {
-    var answer = document.getElementById('span' + data[0]);
-    answer.textContent = data[1];
+    if (data[1] == -1) {
+        alert("오늘은 이미 추천하셨습니다.");
+    }
+    else {
+        var answer = document.getElementById('span' + data[0]);
+        answer.textContent = data[1];
+    }
 }
 
 // 답변하기
 function SetAnswer() {
-    var askSeq = document.getElementById('hidAskSeq').value;
-    var answer = htmlEscape(CKEDITOR.instances.answerEditor.getData());
-    //var userSeq = sessionStorage['UserSeq'];
-    var userSeq = '1'
-    var data = { 'askSeq': askSeq, 'answer': answer, 'userSeq': userSeq };
-    DoAjaxCall('SetAnswer', '', 'SetAnswerCallBack', data);
+    if (window.sessionStorage['LoginKey']) {
+        var askSeq = document.getElementById('hidAskSeq').value;
+        var answer = htmlEscape(CKEDITOR.instances.answerEditor.getData());
+        var userSeq = sessionStorage['LoginKey'];
+        var data = { 'askSeq': askSeq, 'answer': answer, 'userSeq': userSeq };
+        DoAjaxCall('SetAnswer', '', 'SetAnswerCallBack', data);
+    }
+    else {
+        // 로그인 페이지로 이동 -> 로그인후에 다시 돌아와야함
+        alert("로그인하세염");
+        document.location = '../Login.aspx';
+    }
 }
 
 // 답변하기 콜백
 function SetAnswerCallBack(data) {
     alert('정상적으로 저장되었습니다.');
-    window.location = window.location;
+    document.location = document.location;
+}
+
+// 질문수정
+function AskUpdate() {
+    if (window.sessionStorage['LoginKey']) {
+        var askSeq = document.getElementById('hidAskSeq').value;
+        //var userSeq = sessionStorage['LoginKey'];
+        document.location = "/QNA/AskReg.aspx?seq=" + askSeq;
+    }
+    else {
+        // 로그인 페이지로 이동 -> 로그인후에 다시 돌아와야함
+        alert("로그인하세염");
+        document.location = '../Login.aspx';
+    }
+}
+
+// 질문삭제
+function AskDelete() {
+    if (window.sessionStorage['LoginKey']) {
+        var askSeq = document.getElementById('hidAskSeq').value;
+        var data = { 'askSeq': askSeq };
+        DoAjaxCall('AskDelete', '', 'AskDeleteCallBack', data);
+    }
+    else {
+        // 로그인 페이지로 이동 -> 로그인후에 다시 돌아와야함
+        alert("로그인하세염");
+        document.location = '../Login.aspx';
+    }
+}
+
+// 질문삭제 콜백
+function AskDeleteCallBack(data) {
+    alert('정상적으로 삭제되었습니다.');
+    document.location = 'Ask.aspx';
 }
