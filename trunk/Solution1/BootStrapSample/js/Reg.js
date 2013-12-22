@@ -67,15 +67,19 @@ $(document).ready(function () {
         parameter += "&NickName=" + nick.val();
         parameter += "&PassWd=" + pwd.val();
 
-        GetData("UserReg", parameter);
+        GetData("UserReg", parameter, "1");
     });
 });
 
 // 데이터 가져오기 Function 입니다.
-function GetData(spname, data) {
+function GetData(spname, data, Gubn) {
     //Select
-    DoAjaxCall(spname, data, "GetDataCallBack", "");
-
+    if (Gubn == "1") {
+        DoAjaxCall(spname, data, "GetDataCallBack", "");
+    }
+    else if (Gubn == "2") {
+        DoAjaxCall(spname, data, "GetDataCallBackFaceBookLogin", "");
+    }
     //Insert
     //DoAjaxCall("SetDBUpdate", "&parameter1=" + $("#txtparameter1").value + "&parameter2=" + $("#parameter2"), "SetDBUpdateCallBack", "");
 }
@@ -99,4 +103,47 @@ function GetDataCallBack(data) {
             alert("회원가입이 되지 않았습니다.");
         }
     }
+}
+
+//페이스북 SDK 초기화   
+window.fbAsyncInit = function () {
+    FB.init({ appId: '361254127352448', status: true, cookie: true, xfbml: true });
+};
+
+(function (d) {
+    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+}(document));
+
+function facebooklogin() {
+    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
+    FB.login(function (response) {
+        var accessToken = response.authResponse.accessToken;
+        FB.api('/me', function (user) {
+            alert(user.name);  //나중에 얼럿창을 없애야됨
+            alert(user.id);
+
+            var parameter = "&UserDKey=" + user.id();
+            parameter += "&UsersDGugn=" + "F"; //페이스북에서 회원 가입한거임
+
+            GetData("UsersSignUp", parameter, "2");
+
+        });
+    }, { scope: 'publish_stream,user_likes' });
+}
+
+function GetDataCallBackFaceBookLogin(data) {
+    alert("GetDataCallBackFaceBookLogin 잘 들어 왔음");
+    if (data.Column1 != "undefined") {
+        alert("모름");    //없다면 페이스북 회원 가입 화면으로 
+        location.href = "../WhatTheFuck!!.aspx";
+    }
+    else {
+        alert("이미 회원가입이 되어 있습니다. 로그인 해주세요"); //
+        location.href = "../WhatTheFuck!!.aspx";
+    }
+
 }

@@ -102,6 +102,12 @@ public class GenericHandler : IHttpHandler
                     parameter.Add("TagDec", context.Request.Params["TagDec"].ToString());
                     context.Response.Write(TagReg("Tag_Insert", parameter));
                     break;
+                case "UsersSignUp": //페이스북으로 회원 가입시 이미 로그인이 되었는지 확인해본다. 
+                    parameter = new Dictionary<string, string>();
+                    parameter.Add("UsersDGugn", context.Request.Params["UsersDGugn"].ToString());
+                    parameter.Add("UserDKey", context.Request.Params["UserDKey"].ToString());
+                    context.Response.Write(TagReg("UsersSignUp_Select", parameter));
+                    break;
             }
         }
     }
