@@ -67,6 +67,15 @@ function facebooklogin() {
     //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
     FB.login(function (response) {
         var fbname;
+        var useremail;
         var accessToken = response.authResponse.accessToken;
+        FB.api('/me', function (user) {
+            fbname = user.name;
+            userid = user.id;
+            useremail = user.email
+            alert(fbname);  //나중어 얼럿창을 없애야됨
+            alert(userid);
+            alert(useremail);
+        });
     }, { scope: 'publish_stream,user_likes' });
 }

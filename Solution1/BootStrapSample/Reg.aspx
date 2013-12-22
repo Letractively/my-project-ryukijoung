@@ -92,14 +92,15 @@
                         </div>
                         <input id="Reg" type="button" value="회원가입" />
                         <div>
-                            <a href="#">facebook</a>
+                            <div onclick="facebooklogin()" style="cursor: pointer;">
+                                <img src="./img/login/facebooklogin.png" alt="페이스북 로그인">
+                            </div>
                             <a href="#">twitter</a>
                             <a href="#">google</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="shadow-right"></div>
                 <!-- shadow doc-content-box -->
             </div>
             <!--/.doc-content-box -->
