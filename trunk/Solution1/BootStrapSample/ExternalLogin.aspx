@@ -31,7 +31,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Common.js"></script>
-    <script src="js/Login.js"></script>
+    <script src="js/ExternalLogin.js"></script>
 </head>
 
 <body>
