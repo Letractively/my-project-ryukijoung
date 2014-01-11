@@ -84,12 +84,12 @@
 
             <div class="span9">
                 <div class="doc-content-box">
-                    <div onclick="facebooklogin()" style="cursor: pointer;">
-                        <img src="./img/login/facebooklogin.png" alt ="페이스북 로그인">
-                    </div>
+                    <div style="cursor: pointer;">
+                        <a href="../ExternalLogin.aspx?Gubun=F"><img src="./img/login/facebooklogin.png" alt ="페이스북 로그인">
+                    </a></div>
                     
-                    <div><a href="#">twitter</a></div>
-                    <div><a href="#">google</a></div>
+                    <div><a href="../ExternalLogin.aspx?Gubun=T">twitter</a></div>
+                    <div><a href="../ExternalLogin.aspx?Gubun=G">google</a></div>
                     <div>
                         <a id="maqna" href="javascript:void(0)">maqna</a>
                         <div id="LoginControls" style="display: none;">
