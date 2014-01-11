@@ -98,6 +98,12 @@
                             <a href="#">twitter</a>
                             <a href="#">google</a>
                         </div>
+                        <div>
+                            닉네임 : 
+                                        <input id="DtxtNick" type="password"><br />
+                            e-mail : 
+                                        <input id="Dtxtemail" type="password"><br />
+                        </div>
                     </div>
                 </div>
 
