@@ -147,3 +147,22 @@ function GetDataCallBackFaceBookLogin(data) {
     }
 
 }
+
+
+//구글 로그인 성공후 콜백 함수
+function signinCallback(authResult) {
+    if (authResult['access_token']) {
+        // 승인 성공
+        // 사용자가 승인되었으므로 로그인 버튼 숨김. 예:
+        alert("성공");
+        alert(authResult['id_token']);
+        document.getElementById('signinButton').setAttribute('style', 'display: none');
+    } else if (authResult['error']) {
+        // 오류가 발생했습니다.
+        // 가능한 오류 코드:
+        //   "access_denied" - 사용자가 앱에 대한 액세스 거부
+        //   "immediate_failed" - 사용자가 자동으로 로그인할 수 없음
+         console.log('오류 발생: ' + authResult['error']);
+
+    }
+}
