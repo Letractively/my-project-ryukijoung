@@ -98,9 +98,10 @@
                 </div>
                 <div id="divAnswer"></div>
                 <div class="doc-content-box">
-                    <h2>답변하기</h2>
+                    <h2><span id="spanAnswer">답변하기</span></h2>
                     <div id="editor"><textarea class="ckeditor" name="answerEditor"></textarea></div><br />
                     <input onclick="SetAnswer();" type="button" value="저장" />
+                    <input onclick="AnswerCancel();" type="button" value="취소" id="cancelButton" style="visibility:hidden" />
                 </div>
             </div>
         </div>
