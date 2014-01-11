@@ -22,6 +22,14 @@
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="ico/favicon.png">
 
+    <script type="text/javascript">
+        (function () {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/client:plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+
 
     <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
@@ -96,7 +104,19 @@
                                 <img src="./img/login/facebooklogin.png" alt="페이스북 로그인">
                             </div>
                             <a href="#">twitter</a>
-                            <a href="#">google</a>
+                            <%--<div onclick="googlelogin()" style="cursor: pointer;">
+                                <img src="./img/login/googlelogin.png" alt="구글 로그인">
+                            </div>--%>
+
+                            <span id="signinButton">
+                                <span
+                                    class="g-signin"
+                                    data-callback="signinCallback"
+                                    data-clientid="527555610265-m0pshonfkjkib26dv50tfec9v2g0rd33.apps.googleusercontent.com"
+                                    data-cookiepolicy="single_host_origin"
+                                    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                                    data-scope="https://www.googleapis.com/auth/plus.login"></span>
+                            </span>
                         </div>
                         <div>
                             닉네임 : 
@@ -112,7 +132,7 @@
             <!--/.doc-content-box -->
         </div>
         <!--/.span9 -->
-        </div><!--/.row-fluid -->
+        <!--/.row-fluid -->
     </article>
     <!-- /container -->
 
