@@ -1,7 +1,8 @@
 ﻿var UserExternalID;
 var GubunKey;
 jQuery(document).ready(function ($) {
-    GubunKey = getQuerystring("Gubun")
+    GubunKey = getQuerystring("Gubun", "T");
+
     switch (GubunKey) {
         case "F":
             facebooklogin();
@@ -12,9 +13,6 @@ jQuery(document).ready(function ($) {
             break;
     }
     $("#btnOk").click(function () {
-        alert(UserExternalID);
-        return;
-
         var regExp = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
         if (!regExp.test($("#txtEmail").val())) {
