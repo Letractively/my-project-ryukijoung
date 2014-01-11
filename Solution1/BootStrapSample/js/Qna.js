@@ -80,8 +80,11 @@ function SetAsk() {
 
 // 질문하기 콜백
 function SetAskCallBack(data) {
-    alert('정상적으로 저장되었습니다.');
-    document.location = 'Ask.aspx';
+    if (data) {
+        alert('정상적으로 저장되었습니다.');
+        //document.location = 'Ask.aspx';
+        document.location = "AskDetail.aspx?seq=" + data;
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -163,7 +166,7 @@ function GetAskDetailCallBack(data) {
         }
     }
     //제목
-    var strTitle = "<input type='hidden' id='hidAskSeq' value='" + data[0].AskSeq + "' />";
+    var strTitle = "<input type='hidden' id='hidAskSeq' value='" + data[0].AskSeq + "' /><input type='hidden' id='hidAnswerSeq' value='0' />";
     strTitle += "<div class='page-header'><h2>" + data[0].AskTitle + "</h2></div>";
     $("#divAskDetailTitle").html(strTitle);
 
@@ -178,17 +181,19 @@ function GetAskDetailCallBack(data) {
 
         // 수정, 삭제버튼
         var strAnswerBtn = '';
-        //if (window.sessionStorage['LoginKey']) {
-        //    if (sessionStorage['LoginKey'] == data[0].Answers[i].UsersSeq) {
+        if (window.sessionStorage['LoginKey']) {
+            if (sessionStorage['LoginKey'] == data[0].Answers[i].UsersSeq) {
 
-        //        strAnswerBtn = " <input onclick='AnswerUpdate(" + answerData.AnswerSeq + ");' type='button' value='수정' /> <input onclick='AnswerDelete(" + answerData.AnswerSeq + ");' type='button' value='삭제' />";
-        //    }
-        //}
+                strAnswerBtn = " <input onclick='AnswerUpdate(" + answerData.AnswerSeq + ");' type='button' value='수정' /> <input onclick='AnswerDelete(" + data[0].AskSeq + "," + answerData.AnswerSeq + ");' type='button' value='삭제' />";
+            }
+        }
 
         strAnswer += "<table class='table table-bordered' id='answerTable" + answerData.AnswerSeq + "'>";
         strAnswer += "<thead><tr><th colspan='2'>답변자:" + answerData.UserNickName + strAnswerBtn + "</th></tr></thead>";
         strAnswer += "<tbody><tr id='class-summary'><td><p class='class-scope'><a onclick='GoodAnswer(" + answerData.AnswerSeq + ");'>좋은답변</a><span id='span" + answerData.AnswerSeq + "'>" + answerData.GoodAnswerCount + "</span></p></td>"
-        strAnswer += "<td><p class='class-desc'><div id='answer" + answerData.AnswerSeq + "'>" + answerData.Answer + "</div></p></td></tbody></table><div id='divAnswer" + answerData.AnswerSeq + "'></div>";
+        strAnswer += "<td><p class='class-desc'><div id='answer" + answerData.AnswerSeq + "'>" + answerData.Answer + "</div></p></td></tbody></table>";
+
+        //<div id='divAnswer" + answerData.AnswerSeq + "'><textarea class='ckeditor' name='answerEditor" + answerData.AnswerSeq + "' id='answerEditor" + answerData.AnswerSeq + "'></textarea><input onclick='SetAnswer(" + answerData.AnswerSeq + ");' type='button' value='저장' /></div>";
     }
 
     if (strAnswer.length > 0)
@@ -200,7 +205,15 @@ function GetAskDetailCallBack(data) {
 // 답변수정
 function AnswerUpdate(seq) {
     if (window.sessionStorage['LoginKey']) {
-        document.getElementById('divAnswer' + seq).innerHTML = document.getElementById('editor').innerHTML.replace(/answerEditor/gi, "answerEditor" + seq) + "<br /><input onclick='SetAnswer();' type='button' value='저장' />";
+        //document.getElementById('divAnswer' + seq).innerHTML = document.getElementById('editor').innerHTML.replace(/answerEditor/gi, "answerEditor" + seq) + "<br /><input onclick='SetAnswer();' type='button' value='저장' />";
+
+        //CKEDITOR.instances.askEditor.setData(htmlUnescape(data[0].AskDoc));
+        document.getElementById('hidAnswerSeq').value = seq;
+        document.getElementById('spanAnswer').innerHTML = "수정하기";
+        document.getElementById('cancelButton').style.visibility = "visible";
+        var answerDoc = document.getElementById('answer' + seq).innerHTML;
+        CKEDITOR.instances.answerEditor.setData(htmlUnescape(answerDoc));
+        document.getElementById('cancelButton').focus();
     }
     else {
         // 로그인 페이지로 이동 -> 로그인후에 다시 돌아와야함
@@ -209,11 +222,19 @@ function AnswerUpdate(seq) {
     }
 }
 
+// 답변취소
+function AnswerCancel() {
+    document.getElementById('hidAnswerSeq').value = 0;
+    document.getElementById('spanAnswer').innerHTML = "저장하기";
+    document.getElementById('cancelButton').style.visibility = "hidden";
+    CKEDITOR.instances.answerEditor.setData("");
+}
+
 // 답변삭제
-function AnswerDelete(seq) {
+function AnswerDelete(AskSeq, AnswerSeq) {
     if (window.sessionStorage['LoginKey']) {
         if (confirm("정말 삭제하시겠습니까?") == true) {
-            var data = { 'seq': seq };
+            var data = { 'AskSeq': AskSeq, 'AnswerSeq': AnswerSeq };
             DoAjaxCall('AnswerDelete', '', 'AnswerDeleteCallBack', data);
         }
     }
@@ -227,7 +248,8 @@ function AnswerDelete(seq) {
 // 답변삭제 콜백
 function AnswerDeleteCallBack(data) {
     alert('정상적으로 삭제되었습니다.');
-    document.location = 'Ask.aspx';
+    //document.location = 'Ask.aspx';
+    document.location = "AskDetail.aspx?seq=" + data;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -237,8 +259,9 @@ function SetAnswer() {
     if (window.sessionStorage['LoginKey']) {
         var askSeq = document.getElementById('hidAskSeq').value;
         var answer = htmlEscape(CKEDITOR.instances.answerEditor.getData());
+        var answerSeq = document.getElementById('hidAnswerSeq').value;
         var userSeq = sessionStorage['LoginKey'];
-        var data = { 'askSeq': askSeq, 'answer': answer, 'userSeq': userSeq };
+        var data = { 'askSeq': askSeq, 'answerSeq': answerSeq, 'answer': answer, 'userSeq': userSeq };
         DoAjaxCall('SetAnswer', '', 'SetAnswerCallBack', data);
     }
     else {

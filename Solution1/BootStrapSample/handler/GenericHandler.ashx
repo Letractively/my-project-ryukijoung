@@ -71,6 +71,9 @@ public class GenericHandler : IHttpHandler
                 case "SetAnswer":
                     context.Response.Write(SetAnswer(context.Request.Form));
                     break;
+                case "AnswerDelete":
+                    context.Response.Write(AnswerDelete(context.Request.Form));
+                    break;
                 case "GoodAnswer":
                     context.Response.Write(GoodAnswer(context.Request.Form));
                     break;
@@ -117,7 +120,7 @@ public class GenericHandler : IHttpHandler
         JsonResponse response = new JsonResponse();
         JavaScriptSerializer jSerializer = new JavaScriptSerializer();
         string jsonData = string.Empty;
-        
+
         try
         {
             UserInfo user = new UserInfo();
@@ -380,8 +383,8 @@ public class GenericHandler : IHttpHandler
         string jsonData = string.Empty;
         try
         {
-            string askSeq = formData[0];
-            string userSeq = formData[1];
+            int askSeq = Convert.ToInt32(formData[0]);
+            int userSeq = Convert.ToInt32(formData[1]);
             string title = formData[2];
             string ask = formData[3];
 
@@ -393,8 +396,8 @@ public class GenericHandler : IHttpHandler
 
             response.IsSucess = true;
             response.Message = "";
-            dbAccess.NonQueryDBAccess("maqna.Ask_Insert", param);
-            response.ResponseData = true;
+            int insertSeq = Convert.ToInt32(dbAccess.ScalarDBAccess("maqna.Ask_Insert", param));
+            response.ResponseData = (askSeq > 0) ? askSeq : insertSeq;
         }
         catch (Exception ex)
         {
@@ -413,7 +416,7 @@ public class GenericHandler : IHttpHandler
         try
         {
             Dictionary<string, string> dicResult = new Dictionary<string, string>();
-            string askSeq = formData[0];
+            int askSeq = Convert.ToInt32(formData[0]);
 
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
@@ -494,11 +497,13 @@ public class GenericHandler : IHttpHandler
         try
         {
             string askSeq = formData[0];
-            string answer = formData[1];
-            string usersSeq = formData[2];
+            string answerSeq = formData[1];
+            string answer = formData[2];
+            string usersSeq = formData[3];
 
             List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
             param.Add(new System.Data.SqlClient.SqlParameter("@AskSeq", askSeq));
+            param.Add(new System.Data.SqlClient.SqlParameter("@AnswerSeq", answerSeq));
             param.Add(new System.Data.SqlClient.SqlParameter("@Answer", answer));
             param.Add(new System.Data.SqlClient.SqlParameter("@UsersSeq", usersSeq));
 
@@ -506,6 +511,34 @@ public class GenericHandler : IHttpHandler
             response.Message = "";
             dbAccess.NonQueryDBAccess("maqna.Answer_Insert", param);
             response.ResponseData = true;
+        }
+        catch (Exception ex)
+        {
+            response.Message = ex.Message;
+            response.IsSucess = false;
+            response.ResponseData = false;
+        }
+        return jSerializer.Serialize(response);
+    }
+
+    private string AnswerDelete(NameValueCollection formData)
+    {
+        JsonResponse response = new JsonResponse();
+        JavaScriptSerializer jSerializer = new JavaScriptSerializer();
+        string jsonData = string.Empty;
+        try
+        {
+            Dictionary<string, string> dicResult = new Dictionary<string, string>();
+            string askSeq = formData[0];
+            string answerSeq = formData[1];
+            
+            List<System.Data.SqlClient.SqlParameter> param = new List<System.Data.SqlClient.SqlParameter>();
+            param.Add(new System.Data.SqlClient.SqlParameter("@AnswerSeq", answerSeq));
+
+            response.IsSucess = true;
+            response.Message = "";
+            dbAccess.NonQueryDBAccess("maqna.Answer_Delete", param);
+            response.ResponseData = askSeq;
         }
         catch (Exception ex)
         {
