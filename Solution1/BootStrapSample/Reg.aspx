@@ -30,7 +30,15 @@
         })();
     </script>
 
+    <script src="http://platform.twitter.com/anywhere.js?id=cW0sBiY1Mb2u0nytelCEQ&v=1" type="text/javascript"></script>
+    <script type="text/javascript">
 
+        twttr.anywhere(function (T) {
+            T("#loginT").connectButton();
+        });
+
+</script>
+    
     <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
         <![endif]-->
@@ -103,7 +111,9 @@
                             <div onclick="facebooklogin()" style="cursor: pointer;">
                                 <img src="./img/login/facebooklogin.png" alt="페이스북 로그인">
                             </div>
-                            <a href="#">twitter</a>
+                            
+                            
+                            <span id="loginT">twitter</span>
                             <%--<div onclick="googlelogin()" style="cursor: pointer;">
                                 <img src="./img/login/googlelogin.png" alt="구글 로그인">
                             </div>--%>
