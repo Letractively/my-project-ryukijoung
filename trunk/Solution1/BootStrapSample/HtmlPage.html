@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Facebook and Twitter Login Example</title>
+</head>
+<body>
+<!-- div element required by Facebook -->
+<div id="fb-root"></div>
+
+<header>
+</header>
+
+<div>
+
+<!-- div element where the Facebook login button will render -->
+<div class="fb-login-button" autologoutlink="true" scope="publish_stream" data-show-faces="false" data-width="200" data-max-rows="1"></div>
+
+<!-- div element where the Twitter login button will render -->
+<span id="login"></span>
+
+</div>
+
+<footer>
+</footer>
+
+<!-- load the Twitter @anywhere JS library -->
+<script src="//platform.twitter.com/anywhere.js?id=aB96ybCPDjdDb2X8gYYg&v=1" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    // initialize Facebook
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=200794916679736";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // initialize Twitter
+    twttr.anywhere(function (T) {
+        T("#login").connectButton();
+    });
+
+</script>
+
+</body>
+</html>
