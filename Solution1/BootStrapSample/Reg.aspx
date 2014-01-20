@@ -37,8 +37,18 @@
             T("#loginT").connectButton();
         });
 
-</script>
-    
+    </script>
+
+    <%--new login 유기중 로그인 연동 테스트 좀더 쉽게 하기 위하여--%>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
+    <script src="js/Dlogin/cookie.js"></script>
+    <script src="js/Dlogin/twitterLogin.js"></script>
+    <script src="js/Dlogin/googleLogin.js"></script>
+    <script src="js/Dlogin/fbLogin.js"></script>
+
     <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>
         <![endif]-->
@@ -111,8 +121,8 @@
                             <div onclick="facebooklogin()" style="cursor: pointer;">
                                 <img src="./img/login/facebooklogin.png" alt="페이스북 로그인">
                             </div>
-                            
-                            
+
+
                             <span id="loginT">twitter</span>
                             <%--<div onclick="googlelogin()" style="cursor: pointer;">
                                 <img src="./img/login/googlelogin.png" alt="구글 로그인">
@@ -127,6 +137,17 @@
                                     data-requestvisibleactions="http://schemas.google.com/AddActivity"
                                     data-scope="https://www.googleapis.com/auth/plus.login"></span>
                             </span>
+                        </div>
+
+
+                        <div>
+                            NEW 페이스북Login
+                            <div class="loginDiv">
+                                <div id="fbLogin" onclick="">Facebook</div>
+                                <div id="twitterlogin">Twitter</div>
+                                <div id="googlelogin">Google</div>
+                            </div>
+                            <div style="clear: both;" id="userinfo"></div>
                         </div>
                         <div>
                             닉네임 : 
