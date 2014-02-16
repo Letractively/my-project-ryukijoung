@@ -96,6 +96,7 @@
                 <div class="doc-content-box">
                     <input type="text" id="txtAskSearchText" />
                     <input onclick="GetAskList();" type="button" value="조회" />
+                    <hr />
                     <div id="divAskList"></div>
                 </div>
             </div>
