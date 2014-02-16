@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAQNA.Data", "MAQNA.Data\MAQNA.Data.csproj", "{1D1550FB-4098-4D2C-8855-AA42E286982E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAQNA.DAL", "MAQNA.DAL\MAQNA.DAL.csproj", "{4CCB82EB-8C22-43A5-8BC1-ECBA22608238}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BootStrapSample", "http://localhost:3016", "{3B89CB60-F570-4F1A-8908-E02D56793194}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "Svn"
+		SccAuxPath = "Svn"
+		SccLocalPath = "Svn"
+		SccProvider = "SubversionScc"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{4ccb82eb-8c22-43a5-8bc1-ecba22608238}|MAQNA.DAL.dll;{1D1550FB-4098-4D2C-8855-AA42E286982E}|MAQNA.Data.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3016"
+		Debug.AspNetCompiler.PhysicalPath = "BootStrapSample\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3016"
+		Release.AspNetCompiler.PhysicalPath = "BootStrapSample\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3016\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "BootStrapSample\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+	ProjectSection(SvnOrigin) = preProject
+		@Keys = Enlist,Svn.Uri
+		Enlist = Required
+		Svn.Uri = BootStrapSample/
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITQNADOCS", "ITQNADOCS\ITQNADOCS.csproj", "{9D7C59CD-567E-4E24-8936-366C9508955E}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D1550FB-4098-4D2C-8855-AA42E286982E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1550FB-4098-4D2C-8855-AA42E286982E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1550FB-4098-4D2C-8855-AA42E286982E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1550FB-4098-4D2C-8855-AA42E286982E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CCB82EB-8C22-43A5-8BC1-ECBA22608238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCB82EB-8C22-43A5-8BC1-ECBA22608238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CCB82EB-8C22-43A5-8BC1-ECBA22608238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCB82EB-8C22-43A5-8BC1-ECBA22608238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B89CB60-F570-4F1A-8908-E02D56793194}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9D7C59CD-567E-4E24-8936-366C9508955E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7C59CD-567E-4E24-8936-366C9508955E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7C59CD-567E-4E24-8936-366C9508955E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7C59CD-567E-4E24-8936-366C9508955E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
