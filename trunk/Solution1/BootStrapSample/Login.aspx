@@ -32,6 +32,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Common.js"></script>
     <script src="js/Login.js"></script>
+    <script src="js/fbLogin.js"></script>
+    <script src="js/twitterLogin.js"></script>
+    <script src="js/googleLogin.js"></script>
 </head>
 
 <body>
@@ -84,12 +87,13 @@
 
             <div class="span9">
                 <div class="doc-content-box">
-                    <div onclick="facebooklogin()" style="cursor: pointer;">
+                    <div id="fbLogin" style="cursor: pointer;">
                         <img src="./img/login/facebooklogin.png" alt="페이스북 로그인">
                     </div>
-
-                    <div><a href="#">twitter</a></div>
-                    <div><a href="#">google</a></div>
+                    <%--<div id="twitterlogin">twitter</div>--%>
+                    <%--<div id="googlelogin">google</div>--%>
+                    <input type="button" id="twitterlogin" value="twitter"/>
+                    <input type="button" id="googlelogin" value="google"/>
                     <div>
                         <a id="maqna" href="javascript:void(0)">maqna</a>
                         <div id="LoginControls" style="display: none;">
