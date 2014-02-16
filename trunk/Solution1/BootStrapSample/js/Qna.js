@@ -11,27 +11,48 @@ function GetAskList() {
 }
 
 // 질문목록 조회 콜백
+//function GetAskListCallBack(data) {
+//    var str
+//    if (data.length > 0) {
+//        str = "<table border='1' style='width:500px;'>"
+//        str += "<th>좋은질문</th><th>질문자</th><th>제목</th><th>조회수</th><th>답변수</th><th>등록일</th>"
+//        for (var i = 0; i < data.length; i++) {
+//            str += "<tr>";
+//            str += "<td><a onclick='GoodAsk(" + data[i].AskSeq + ");'><span id=span" + data[i].AskSeq + ">" + data[i].GoodAskCount + "</span></a></td>";
+//            str += "<td>" + data[i].UserNickName + "</td>";
+//            str += "<td><a href='AskDetail.aspx?seq=" + data[i].AskSeq + "'>" + data[i].AskTitle + "</a></td>";
+//            str += "<td>" + data[i].AskCount + "</td>";
+//            str += "<td>" + data[i].AnswerCount + "</td>";
+//            str += "<td>" + data[i].AskRegDate + "</td></tr>";
+//        }
+//        str += "</table>";
+//    }
+//    else {
+//        str = "데이터가 하나도 음써욤";
+//    }
+//    $("#divAskList").html(str);
+//}
+
 function GetAskListCallBack(data) {
-    var str
-    if (data.length > 0) {
-        str = "<table border='1' style='width:500px;'>"
-        str += "<th>좋은질문</th><th>질문자</th><th>제목</th><th>조회수</th><th>답변수</th><th>등록일</th>"
-        for (var i = 0; i < data.length; i++) {
-            str += "<tr>";
-            str += "<td><a onclick='GoodAsk(" + data[i].AskSeq + ");'><span id=span" + data[i].AskSeq + ">" + data[i].GoodAskCount + "</span></a></td>";
-            str += "<td>" + data[i].UserNickName + "</td>";
-            str += "<td><a href='AskDetail.aspx?seq=" + data[i].AskSeq + "'>" + data[i].AskTitle + "</a></td>";
-            str += "<td>" + data[i].AskCount + "</td>";
-            str += "<td>" + data[i].AnswerCount + "</td>";
-            str += "<td>" + data[i].AskRegDate + "</td></tr>";
+        var str
+        if (data.length > 0) {
+            str = "<table border='0' style='width:500px;'>"
+            for (var i = 0; i < data.length; i++) {
+                str += "<tr>";
+                str += "<td rowspan='2' align='center'>" + data[i].GoodAskCount + "<br/>좋은질문</td>";
+                str += "<td rowspan='2' align='center'>" + data[i].AnswerCount + "<br/>답변</td>";
+                str += "<td rowspan='2' align='center'>" + data[i].AskCount + "<br/>조회</td>";
+                str += "<td colspan='3'><a href='AskDetail.aspx?seq=" + data[i].AskSeq + "'>" + data[i].AskTitle + "</a></td></tr>";
+                str += "<tr><td>태그정보</td><td>" + data[i].UserNickName + "</td>";
+                str += "<td>" + data[i].AskRegDate + "</td></tr>";
+            }
+            str += "</table>";
         }
-        str += "</table>";
+        else {
+            str = "데이터가 하나도 음써욤";
+        }
+        $("#divAskList").html(str);
     }
-    else {
-        str = "데이터가 하나도 음써욤";
-    }
-    $("#divAskList").html(str);
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
