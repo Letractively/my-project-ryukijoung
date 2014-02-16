@@ -34,7 +34,15 @@ function checkFbHashLogin() {
 function displayUser(user) {
     setTimeout(function () { }, 1000);
     if (user.id != null && user.id != "undefined") {
-        alert(user.id);
+        var info = user.id;
+        info += '\nname' + user.name;
+        info += '\nfirst_name' + user.first_name;
+        info += '\nlast_name' + user.last_name;
+        info += '\nlink' + user.link;
+        info += '\nusername' + user.username;
+        info += '\ngender' + user.gender;
+        info += '\nlocale' + user.locale;
+        info += '\nage_range' + user.age_range;
 
         //Do Stuff
         //You have access to user id, name, username, gender etc.
