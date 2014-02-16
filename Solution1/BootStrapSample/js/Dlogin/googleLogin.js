@@ -1,5 +1,5 @@
-﻿var clientId = <Your Client ID>;
-var apiKey = <Your API Key>;
+﻿var clientId = '';
+var apiKey = '';
 var scopes = 'https://www.googleapis.com/auth/plus.me';
 var google = false;
 

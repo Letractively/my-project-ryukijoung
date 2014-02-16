@@ -32,6 +32,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Common.js"></script>
     <script src="js/Login.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
     <script src="js/Dlogin/fbLogin.js"></script>
     <script src="js/Dlogin/twitterLogin.js"></script>
     <script src="js/Dlogin/googleLogin.js"></script>
