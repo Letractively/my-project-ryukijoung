@@ -51,31 +51,31 @@ function GetDataCallBack(data) {
 }
 
 //페이스북 SDK 초기화   
-window.fbAsyncInit = function () {
-    FB.init({ appId: '361254127352448', status: true, cookie: true, xfbml: true });
-};
+//window.fbAsyncInit = function () {
+//    FB.init({ appId: '361254127352448', status: true, cookie: true, xfbml: true });
+//};
 
-(function (d) {
-    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-    if (d.getElementById(id)) { return; }
-    js = d.createElement('script'); js.id = id; js.async = true;
-    js.src = "//connect.facebook.net/en_US/all.js";
-    ref.parentNode.insertBefore(js, ref);
-}(document));
+//(function (d) {
+//    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+//    if (d.getElementById(id)) { return; }
+//    js = d.createElement('script'); js.id = id; js.async = true;
+//    js.src = "//connect.facebook.net/en_US/all.js";
+//    ref.parentNode.insertBefore(js, ref);
+//}(document));
 
-function facebooklogin() {
-    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
-    FB.login(function (response) {
-        var fbname;
-        var useremail;
-        var accessToken = response.authResponse.accessToken;
-        FB.api('/me', function (user) {
-            fbname = user.name;
-            userid = user.id;
-            useremail = user.email
-            alert(fbname);  //나중어 얼럿창을 없애야됨
-            alert(userid);
-            alert(useremail);
-        });
-    }, { scope: 'publish_stream,user_likes' });
-}
+//function facebooklogin() {
+//    //페이스북 로그인 버튼을 눌렀을 때의 루틴.  
+//    FB.login(function (response) {
+//        var fbname;
+//        var useremail;
+//        var accessToken = response.authResponse.accessToken;
+//        FB.api('/me', function (user) {
+//            fbname = user.name;
+//            userid = user.id;
+//            useremail = user.email
+//            alert(fbname);  //나중어 얼럿창을 없애야됨
+//            alert(userid);
+//            alert(useremail);
+//        });
+//    }, { scope: 'publish_stream,user_likes' });
+//}
