@@ -32,9 +32,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Common.js"></script>
     <script src="js/Login.js"></script>
-    <script src="js/fbLogin.js"></script>
-    <script src="js/twitterLogin.js"></script>
-    <script src="js/googleLogin.js"></script>
+    <script src="js/Dlogin/fbLogin.js"></script>
+    <script src="js/Dlogin/twitterLogin.js"></script>
+    <script src="js/Dlogin/googleLogin.js"></script>
 </head>
 
 <body>
